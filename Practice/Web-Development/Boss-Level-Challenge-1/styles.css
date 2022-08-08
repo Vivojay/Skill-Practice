@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    background-color: #34353e;
+}
+
+/* Heading */
+.main-heading {
+    color: #44c497;
+    font-size: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-family: 'Lobster', cursive;
+}
+
+.dices {
+    text-align: center;
+    color: #44c497;
+}
+
+.player-1, .player-2 {
+    display: inline-block;
+    padding: 2% 1.5%;
+    font-size: 1.5rem;
+    font-family: 'Indie Flower', cursive;
+}
+
+.player-1-heading, .player-2-heading {
+    padding: 10% 0%;
+}
+
+.footer-para {
+    font-size: 1.5rem;
+    color: #fff;
+    padding-top: 5%;
+    font-family: 'Indie Flower', cursive;
+}
+
+.footer-icon {
+    font-size: 0.8rem;
+    color: grey;
+    font-family: 'Indie Flower', cursive;
+}
