@@ -1,0 +1,101 @@
+body {
+  text-align: center;
+  background-color: #283149;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #DA0463;
+
+}
+
+footer {
+  color: #DBEDF3;
+  font-family: sans-serif;
+}
+
+.w, .a, .s, .d, .j, .k, .l {
+  background-repeat: no-repeat;
+  background-size: 8.12rem;
+}
+
+.w {
+  background-image: url("images/wooden-clave.jpg");
+}
+
+.a {
+  background-image: url("images/hi-fx.png");
+  background-size: 30rem;
+}
+
+.s { 
+  background-image: url("images/glass-break-fx.jpg");
+  background-size: 20rem;
+}
+
+.d {
+  background-image: url("images/o-hi-hat-trap.jpg");
+}
+
+.j {
+  background-image: url("images/snare.png");
+}
+
+.k {
+  background-image: url("images/c-hi-hat-trap.jpg");
+}
+
+.l {
+  background-image: url("images/kick.png");
+}
+
+.m {
+  background-image: url("images/kick.png");
+}
+
+.set {
+  margin: 10% auto;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+.red {
+  color: red;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+}
+
+.sound-btn {
+  display: inline-block;
+}
+
+.footer-link {
+  color: pink;
+}
+
