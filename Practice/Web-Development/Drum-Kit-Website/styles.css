@@ -12,27 +12,27 @@ h1 {
 }
 
 footer {
-  color: #DBEDF3;
+  color: #c9efdb;
   font-family: sans-serif;
 }
 
 .w, .a, .s, .d, .j, .k, .l {
   background-repeat: no-repeat;
-  background-size: 8.12rem;
+  background-size: 12.6rem;
 }
 
 .w {
   background-image: url("images/wooden-clave.jpg");
+  background-size: 15rem;
 }
 
 .a {
   background-image: url("images/hi-fx.png");
-  background-size: 30rem;
 }
 
 .s { 
   background-image: url("images/glass-break-fx.jpg");
-  background-size: 20rem;
+  background-size: 30rem;
 }
 
 .d {
@@ -48,10 +48,6 @@ footer {
 }
 
 .l {
-  background-image: url("images/kick.png");
-}
-
-.m {
   background-image: url("images/kick.png");
 }
 
@@ -84,8 +80,8 @@ footer {
   text-shadow: 3px 0 #DBEDF3;
   border-radius: 15px;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 220px;
+  height: 220px;
   text-align: center;
   margin: 10px;
   background-color: white;
