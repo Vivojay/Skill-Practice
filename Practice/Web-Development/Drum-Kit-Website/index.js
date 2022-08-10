@@ -2,11 +2,14 @@ var drumButtons = document.querySelectorAll(".drum");
 
 // Add button press event listener to all drum sounds
 for (var i = 0; i < drumButtons.length; i++) {
-    drumButtons[i].addEventListener("click", function () {playSound(this.innerHTML)});
+    drumButtons[i].addEventListener("click", function () {
+        playSound(this.innerHTML);
+        buttonAnimation(this.innerHTML);
+    });
 }
 
 // Add keyboard key-down event listener to all drum sounds
-document.addEventListener("keydown", function(event) {playSound(event.key)});
+document.addEventListener("keydown", function (event) { playSound(event.key) });
 
 function playSound(buttonLetter) {
     switch (buttonLetter) {
@@ -29,6 +32,7 @@ function playSound(buttonLetter) {
             console.log(buttonLetter);
     }
     playButtonSound(soundName);
+    buttonAnimation(buttonLetter);
 }
 
 function playButtonSound(soundName) {
@@ -36,4 +40,9 @@ function playButtonSound(soundName) {
     audio.play();
 }
 
-
+function buttonAnimation(currentKey) {
+    document.querySelector("." + currentKey).classList.add("pressed");
+    myTimeout = setTimeout(function () {
+        document.querySelector("." + currentKey).classList.remove("pressed");
+    }, 100);
+}
