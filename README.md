@@ -6,8 +6,8 @@
 | Task                                             | Completed | Revisited (Count) |
 |--------------------------------------------------|-----------|-------------------|
 | **Full Stack Web Development**                   |           |                   |
-| - HTML                                           |           |                   |
-| - CSS                                            |           |                   |
+| - HTML                                           |     1     |                   |
+| - CSS                                            |     1     |                   |
 | - Bootstrap                                      |           |                   |
 | - JS+DOM                                         |           |                   |
 | - jQuery                                         |           |                   |
