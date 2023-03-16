@@ -1,0 +1,85 @@
+body {
+	background-color: #0c1524;
+}
+
+h1, h2 {
+	color: #42E2B8;
+	font-family: "Poppins", sans-serif;
+	text-align: center;
+	margin: auto;
+	letter-spacing: 0.1rem;
+}
+
+h2 {
+	font-family: 'Manrope', sans-serif;
+}
+
+.head {
+	background-color: #29473b;
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+.head-spacer {
+	height: 5vw;
+}
+
+.ttt {
+	margin: auto;
+	width: min(50vw, 600px);
+	height: min(50vw, 600px);
+}
+
+.row {
+	height: calc(100% / 3);
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.row:first-of-type {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+.row:last-of-type {
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.ttt-cross {
+	margin: 20% 0;
+	font-size: 600%;
+	cursor: none;
+	color: #6B0F1A;
+}
+
+.ttt-nought {
+	margin: 18% 0;	
+	font-size: 500%;
+	cursor: none;
+	color: #004E98;
+}
+
+.cell {
+	vertical-align: top;
+	display: inline-block;
+	width: calc(88% / 3);
+	height: 88%;
+	/*background: linear-gradient(30deg, #2D82B7 0%, #6AAA52 70%);*/
+	background: linear-gradient(30deg, #E0FF4F 0%, #00C49A 90%);
+	margin: 2% 3%;
+	border-radius: 10px;
+}
+
+.cell:first-of-type {
+	margin-left: 2%;
+	margin-right: 1%;
+}
+
+.cell:last-of-type {
+	margin-left: 1%;
+	margin-right: 2%;
+}
+
+
