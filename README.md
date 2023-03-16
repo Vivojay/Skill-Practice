@@ -2,39 +2,57 @@
 
 # Roadmap
 
-
 | Task                                             | Completed | Revisited (Count) |
 |--------------------------------------------------|-----------|-------------------|
-| **Full Stack Web Development**                   |           |                   |
+| <ins>**Full Stack Web Development**</ins>        |           |                   |
 | - HTML                                           |     1     |                   |
 | - CSS                                            |     1     |                   |
 | - Bootstrap                                      |           |                   |
 | - JS+DOM                                         |           |                   |
 | - jQuery                                         |           |                   |
+| - AJAX                                           |           |                   |
 | - Unix Commandline                               |           |                   |
 | - Backend Node.js + Express.js                   |           |                   |
 | - Using APIs                                     |           |                   |
 | - Git + GitHub                                   |           |                   |
+| <ins>**Databases and (R)DBMS Concepts**</ins>    |           |                   |
 | - Databases [SQL, MogoDB, Mongoose]              |           |                   |
 | - Deploying Websites                             |           |                   |
 | - Building a RESTful API from Scratch            |           |                   |
 | - Security + Auth                                |           |                   |
 | - React.js                                       |           |                   |
-| - Web3 + DApps                                   |           |                   |
-| - Building a Defi DApp                           |           |                   |
-| - Deploying to Live ICP Blockchain               |           |                   |
-| - DApps on ICP Blockchain with React Frontend    |           |                   |
-| - Creating a Crypto Token                        |           |                   |
-| - Minting NFTs and Making an NFT Marketplace     |           |                   |
-| **Databases and (R)DBMS Concepts**               |           |                   |
-| **DevOps**                                       |           |                   |
-| **DSA**                                          |           |                   |
-| **OOP**                                          |           |                   |
-| **Software Development**                         |           |                   |
-| **Languages/Technologies**                       |           |                   |
-| - Python                                         |           |                   |
-| - Java                                           |           |                   |
-| - C++                                            |           |                   |
-| - Go                                             |           |                   |
-| - Dart                                           |           |                   |
-| - Rust                                           |           |                   |
+
+## Skills
+
+| <ins>**DSA**</ins> | Status |
+|--------------------|--------|
+| Pattern Printing ||
+| Array Related ||
+| String Manipulation ||
+| Bit Manipulation ||
+| Bin Search ||
+| Sorting ||
+| Linked List ||
+| Stacks ||
+| Queues ||
+| Recursion ||
+| Trees ||
+| Graphs ||
+| Greedy ||
+| Backtracking ||
+| DP ||
+
+<!--
+
+| <ins>**DevOps**</ins> | Status |
+|-----------------------|--------|
+|          -            |   -    |
+
+| <ins>**OOPs**</ins> | Status |
+|---------------------|--------|
+|          -          |   -    |
+
+| <ins>**Software Development**</ins> | Status |
+|-------------------------------------|--------|
+|                 -                   |   -    |
+-->
