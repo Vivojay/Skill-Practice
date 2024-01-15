@@ -2,6 +2,7 @@
 
 # -- Imports -- #
 import os
+import hashlib
 import numpy as np
 
 # -- Important constants and array definitions -- #
@@ -61,15 +62,13 @@ INV_MIX_MAT = np.array([
 
 RC = [0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1B, 0x36]
 
-# User set variables
-KEY_TYPE = 'STR' # Leave as it is for string keys
-"""
-Possible values:
-value: STR | Type of key: String
-value: HEX | Type of key: Hexadecimal  (Not implemented yet)
-value: BIN | Type of key: Binary       (Not implemented yet)
-value: DEC | Type of key: Decimal      (Not implemented yet)
-"""
+# # User set variables
+# CONTENT_TYPE = 'STR' # Leave as it is for string input
+# """
+# Possible values:
+# value: STR | Type of key: String
+# value: BIN | Type of key: Binary
+# """
 
 # Only implemented flavour as of yet
 AES_FLAVOUR = 128
@@ -251,7 +250,23 @@ def mix_cols(mix_mat, state_array):
     return prod.astype(int)
     # np.vectorize(hex)(np.vectorize(int)(state_array))
 
-def enc_file(key, file_path, key_type=KEY_TYPE, output_file=None):
+def generate_key(password,
+                 salt,
+                 aes_flavour=AES_FLAVOUR,
+                 iterations=20):
+    assert iterations > 0
+
+    key_len = aes_flavour//8
+    if password is None: password = os.urandom(key_len)
+
+    key = hashlib.pbkdf2_hmac('sha256',
+                              password,
+                              salt,
+                              100000,
+                              dklen=key_len)
+    return key
+
+def enc_file(key, file_path, output_file=None, show_progress=True):
     if output_file is None:
         output_file = file_path
 
@@ -262,9 +277,10 @@ def enc_file(key, file_path, key_type=KEY_TYPE, output_file=None):
     try:
         with open(file_path, 'rb') as fp:
             plaintext = fp.read()
-        ciphertext = enc_text(key, plaintext, key_type)
+        ciphertext = enc_text(key, plaintext, show_progress=show_progress)
         with open(output_file, 'wb') as fp:
             fp.write(ciphertext)
+        return 0
     except OSError:
         print("File Error encountered, could not sucessfully encrypt file")
     except Exception:
@@ -277,7 +293,9 @@ def enc_file(key, file_path, key_type=KEY_TYPE, output_file=None):
     except Exception:
         print("File could not be reverted")
 
-def dec_file(key, file_path, key_type=KEY_TYPE, output_file=None):
+    return 1
+
+def dec_file(key, file_path, output_file=None, show_progress=True):
     if output_file is None:
         output_file = file_path
 
@@ -288,12 +306,14 @@ def dec_file(key, file_path, key_type=KEY_TYPE, output_file=None):
     try:
         with open(file_path, 'rb') as fp:
             ciphertext = fp.read()
-        plaintext = dec_text(key, ciphertext, key_type)
+        plaintext = dec_text(key, ciphertext, show_progress=show_progress)
         with open(output_file, 'wb') as fp:
             fp.write(plaintext)
+        return 0
     except OSError:
         print("File Error encountered, could not sucessfully encrypt file")
     except Exception:
+        raise
         print("Some error occured, could not sucessfully encrypt file")
 
     try:
@@ -303,16 +323,26 @@ def dec_file(key, file_path, key_type=KEY_TYPE, output_file=None):
     except Exception:
         print("File could not be reverted")
 
-def enc_text(key, plaintext, key_type=KEY_TYPE):
+    return 1
+
+def enc_text(pwd, content, show_progress=False):
     # matrix visualization lambda function
     global AES_FLAVOUR, MIX_MAT, padded_plaintext, cipher_block, state_array, vis_func_block
 
-    if key_type == 'STR':
-        key = np.array([ord(i) for i in key])
+    salt_size = AES_FLAVOUR//8
+    iterations = 20
+    salt = os.urandom(salt_size)
+    key = generate_key(password=pwd.encode(), salt=salt, iterations=iterations)
+    key = np.array(bytearray(key))
 
-    # j2qYXh6559jstaQGhlCw6w==
+    # if key_type == 'STR':
+    #     key = np.array([ord(i) for i in key])
 
-    plaintext = [ord(i) for i in plaintext]
+    if isinstance(content, bytes):
+        plaintext = list(bytearray(content))
+    else:
+        plaintext = [ord(i) for i in content]
+
     ciphertext_blocks = []
 
     # Add PKCS#7 Padding
@@ -361,7 +391,10 @@ def enc_text(key, plaintext, key_type=KEY_TYPE):
             # print('-'*80+'\n')
 
         ciphertext_blocks.append(state_array)
+        if show_progress:
+            print(f"Encrypted block {i+1}/{block_count} | {round((i+1)/block_count*100, 2)}%", end='\r')
 
+    if show_progress: print()
     # Encrypted text out
     ciphertext_blocks = np.array(ciphertext_blocks).astype(int)
 
@@ -377,14 +410,22 @@ def enc_text(key, plaintext, key_type=KEY_TYPE):
         cipher_blockT_HEX = np.vectorize(lambda x:f"{x:02x}")(cipher_blockT)
         ciphertext += ''.join(cipher_blockT_HEX)
 
-    return ciphertext
+    return salt + ciphertext.encode()
 
-def dec_text(key, ciphertext, key_type=KEY_TYPE):
+def dec_text(pwd, ciphertext, show_progress=False):
     # matrix visualization lambda function
     global MIX_MAT, padded_plaintext, cipher_block, state_array, vis_func_block
 
-    if key_type == 'STR':
-        key = np.array([ord(i) for i in key])
+    # if key_type == 'STR':
+    #     key = np.array([ord(i) for i in key])
+
+    salt_size = 16
+    iterations = 20
+
+    salt = ciphertext[:salt_size]
+    ciphertext = ciphertext[salt_size:]
+    key = generate_key(password=pwd.encode(), salt=salt, iterations=iterations)
+    key = np.array(bytearray(key))
 
     try:
         ciphertext = [ciphertext[2*x:2*(x+1)] for x in range(len(ciphertext)//2)]
@@ -440,15 +481,19 @@ def dec_text(key, ciphertext, key_type=KEY_TYPE):
             # print('-'*80)
 
         plaintext_blocks.append(state_array)
+        if show_progress:
+            print(f"Decrypted block {round_count+1}/{block_count} | {round((round_count+1)/block_count*100, 2)}%", end='\r')
 
+    if show_progress: print()
     # Decrypted text out
     plaintext_blocks = np.array(plaintext_blocks).astype(int)
     plaintext_blocksT = [np.resize(np.resize(plain_block, (plain_block.size//4, 4)).T, plain_block.size) for plain_block in plaintext_blocks]
 
-    # remove padding characters from the end
+    # Remove PKCS#7 padding characters from the end
     plaintext_blocksT[-1] = plaintext_blocksT[-1][:len(plaintext_blocksT[-1])-plaintext_blocksT[-1][-1]]
 
     plaintext_blocks = []
     _ = [plaintext_blocks.extend(i) for i in plaintext_blocksT]
 
-    return ''.join([chr(i) for i in plaintext_blocks])# plaintext
+    return ''.join([chr(i) for i in plaintext_blocks]).encode() # plaintext
+
