@@ -1,0 +1,11 @@
+openai
+sounddevice
+pydub
+whisper
+sounddevice
+pydub
+scipy
+numpy
+sentencepiece
+transformers[torch]
+datasets
