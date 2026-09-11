@@ -16,6 +16,8 @@ def inverse_frequencies(dim, *, base=10000., factor=1., original_length=4096,
         raise ValueError('Need 0 < beta_slow < beta_fast')
     index = torch.arange(dim // 2, device=device, dtype=dtype)
     frequencies = base ** (-2 * index / dim)
+    if scheme not in ('yarn','llama3'):
+        raise ValueError('Unknown rotary scaling scheme')
     if factor == 1:
         return frequencies
     if scheme == 'llama3':
@@ -24,8 +26,6 @@ def inverse_frequencies(dim, *, base=10000., factor=1., original_length=4096,
         rotations = original_length*frequencies/(2*math.pi)
         blend = ((rotations-low_frequency)/(high_frequency-low_frequency)).clamp(0,1)
         return frequencies*(blend+(1-blend)/factor)
-    if scheme != 'yarn':
-        raise ValueError('Unknown rotary scaling scheme')
     def boundary(rotations):
         return dim * math.log(original_length / (2 * math.pi * rotations)) / (2 * math.log(base))
     low = max(0, math.floor(boundary(beta_fast)))
@@ -46,8 +46,8 @@ def rotate(x, positions, *, interleaved=True, **options):
     return torch.cat((a*c-b*s, a*s+b*c), -1)
 
 
-def attention_scale(factor):
+def attention_scale(factor,coefficient=1.):
     """V3's all-dimension logit multiplier; not a claim of long-context quality."""
     if factor < 1:
         raise ValueError('Extension factor must be >= 1')
-    return (1 + .1 * math.log(factor)) ** 2
+    return (1 + .1 * coefficient * math.log(factor)) ** 2

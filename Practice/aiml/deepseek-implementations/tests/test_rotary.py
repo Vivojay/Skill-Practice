@@ -16,6 +16,7 @@ def test_frequency_ramp_and_relative_positions():
             return rotate(a, torch.tensor([p]), interleaved=interleaved, factor=4, original_length=64)
         torch.testing.assert_close((r(x, 23)*r(y, 19)).sum(-1), (r(x, 4)*y).sum(-1))
     assert attention_scale(4) == (1+.1*math.log(4))**2
+    assert attention_scale(4,.707) == (1+.0707*math.log(4))**2
 
 
 def test_scaled_mla_cache_crosses_original_context():

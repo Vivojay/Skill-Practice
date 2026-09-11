@@ -1,6 +1,6 @@
 """DeepSeekMoE equations 9–17; loss-free balancing Algorithm 1 (v1).
 
-No capacity dropping, device communication, or release-specific group routing.
+No capacity dropping or device communication. Group selection is local tensor math.
 The residual addition belongs to the caller.
 """
 import torch

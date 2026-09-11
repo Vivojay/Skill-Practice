@@ -54,3 +54,22 @@ def test_integrated_mtp_sharing_and_shifted_causality():
     assert model.base.embedding.weight.grad.abs().sum() > 0
     assert model.next_block.attention.q_down.weight.grad.abs().sum() > 0
     assert model.base.head.weight.grad.abs().sum() > 0
+
+
+def test_sparse_attention_matches_explicit_gathered_heads():
+    layer = SparseMLA(top_k=2).double().eval()
+    x = torch.randn(1,5,32,dtype=torch.float64)
+    qc,qr,c,kr = layer._project(x,0)
+    iq,ik,iw = layer.indexer.project(x,layer.q_norm(layer.q_down(x)),0)
+    index = layer.indexer.scores(iq,ik,iw)[0]
+    k = layer.k_up(c).view(5,layer.heads,layer.content)
+    v = layer.v_up(c).view(5,layer.heads,layer.value)
+    rows = []
+    for t in range(5):
+        selected = index[t,:t+1].topk(min(2,t+1)).indices.tolist()
+        heads = []
+        for h in range(layer.heads):
+            scores = torch.stack([(qc[0,t,h].dot(k[s,h])+qr[0,t,h].dot(kr[0,s]))*layer.scale for s in selected])
+            heads.append(sum(p*v[s,h] for p,s in zip(scores.softmax(0),selected)))
+        rows.append(layer.out(torch.cat(heads)))
+    torch.testing.assert_close(layer(x)[0],torch.stack(rows))

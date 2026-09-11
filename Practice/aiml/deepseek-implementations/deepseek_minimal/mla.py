@@ -1,4 +1,4 @@
-"""V2 MLA equations 9–19 with ordinary adjacent-pair RoPE (no YaRN).
+"""V2 MLA equations 9–19 with adjacent-pair RoPE and optional fixed YaRN scaling.
 
 Absorption algebra checked against the official V3 inference implementation;
 see THIRD_PARTY.md. Inference caches are explicit values owned by the caller.
@@ -36,13 +36,13 @@ class Cache:
 
 class MLA(nn.Module):
     def __init__(self, width=32, heads=4, content=8, positional=4, value=8,
-                 kv_rank=8, q_rank=16, rotary=None):
+                 kv_rank=8, q_rank=16, rotary=None, mscale=1.):
         super().__init__()
         if min(width, heads, content, positional, value, kv_rank, q_rank) < 1 or positional % 2:
             raise ValueError('Positive dimensions and even RoPE dimension required')
         self.heads, self.content, self.positional, self.value = heads, content, positional, value
         self.rotary = dict(rotary or {})
-        self.scale = attention_scale(self.rotary.get('factor', 1)) / math.sqrt(content + positional)
+        self.scale = attention_scale(self.rotary.get('factor', 1),mscale) / math.sqrt(content + positional)
         self.q_down = nn.Linear(width, q_rank, bias=False)
         self.q_norm = nn.RMSNorm(q_rank, eps=1e-6)
         self.q_content = nn.Linear(q_rank, heads*content, bias=False)

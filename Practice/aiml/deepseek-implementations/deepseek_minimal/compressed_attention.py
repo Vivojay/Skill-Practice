@@ -63,7 +63,8 @@ class CompressedAttention(nn.Module):
         self.heads,self.dim,self.positional = heads,dim,positional
         self.ratio,self.window,self.top_k,self.overlap = ratio,window,top_k,overlap
         self.groups,self.out_rank = groups,out_rank
-        self.rotary = dict(rotary or {})
+        self.rotary = dict(base=40000. if ratio else 10000.)
+        self.rotary.update(rotary or {})
         self.q_down = nn.Linear(width,q_rank,bias=False)
         self.q_norm = nn.RMSNorm(q_rank,eps=1e-6)
         self.q_up = nn.Linear(q_rank,heads*dim,bias=False)

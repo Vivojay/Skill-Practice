@@ -9,7 +9,7 @@ def build(vocab=32, width=32, layers=2, rotary=None):
         raise ValueError('Need at least one layer')
     blocks = []
     for layer in range(layers):
-        attention = MLA(width=width, rotary=rotary)
+        attention = MLA(width=width, rotary=rotary, mscale=.707)
         ffn = Expert(width, 3*width) if layer == 0 else MoE(
             width, hidden=width//2, routed=8, shared=2, top_k=2,
             normalize=False, groups=2, top_groups=1, group_score='max', route_scale=4.)
