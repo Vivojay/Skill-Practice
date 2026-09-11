@@ -14,4 +14,4 @@ include = ["deepseek_minimal*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-q"
+addopts = "-q -p no:cacheprovider"
