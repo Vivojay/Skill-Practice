@@ -1,0 +1,207 @@
+{
+  "checked_on": "2026-09-11",
+  "read_commits": {
+    "DeepSeek-V3": "9b4e9788e4a3a731f7567338ed15d3ec549ce03b",
+    "DeepSeek-V2": "ec98ee3cbffc32104cd55dba8af884b3d772602a",
+    "DeepSeek-MoE": "66edeee5a4f75cbd76e0316229ad101805a90e01",
+    "DeepSeek-Math": "b8b0f8ce093d80bf8e9a641e44142f06d092c305",
+    "open-infra-index": "56d86855fcf6e08fdfd45ce6280bd24322c93351"
+  },
+  "extended_attempts": [
+    {
+      "repo": "DeepSeek-Coder",
+      "sha": "2f9fd85927c669dae3c0fbb2d607274023af243e",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DreamCraft3D",
+      "sha": "5829ef116d36c871ce2b9e54a6153dd3856a1561",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "awesome-deepseek-coder",
+      "sha": "f77c511dae540b950c4a9bb3b6aed4b7b3e2deb4",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-LLM",
+      "sha": "6712a86bfb7dd25c73383c5ad2eb7a8db540258b",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-MoE",
+      "sha": "66edeee5a4f75cbd76e0316229ad101805a90e01",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "awesome-deepseek-integration",
+      "sha": "94a834802fd1489db4ced41f3a23c669cb8644b1",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-Math",
+      "sha": "b8b0f8ce093d80bf8e9a641e44142f06d092c305",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-VL",
+      "sha": "681bffb4519856ad27cc17531aacde31ddf6f1a7",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-V2",
+      "sha": "ec98ee3cbffc32104cd55dba8af884b3d772602a",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-Coder-V2",
+      "sha": "a2b4e0a25b5dab1ee87e8080f76e4512b0725b7b",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "ESFT",
+      "sha": "3746ca74410c92163cc521571dbd17579bfdc962",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-Prover-V1.5",
+      "sha": "2c4ba9119eef74d0d611f494261b2c5bae98c69a",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "Janus",
+      "sha": "1daa72fa409002d40931bd7b36a9280362469ead",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-VL2",
+      "sha": "ef9f91e2b6426536b83294c11742c27be66361b1",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-V3",
+      "sha": "9b4e9788e4a3a731f7567338ed15d3ec549ce03b",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepSeek-R1",
+      "sha": "0cf78561f1d51c84a21b2190626b21116d5c68bb",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepGEMM",
+      "sha": "66081d4c9c7d7c44f13fea402e5b622aa0f409c2",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "DeepEP",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "open-infra-index",
+      "sha": "56d86855fcf6e08fdfd45ce6280bd24322c93351",
+      "error": "The read operation timed out"
+    },
+    {
+      "repo": "FlashMLA",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "smallpond",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "profile-data",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "EPLB",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DualPipe",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "3FS",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DeepSeek-Prover-V2",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DeepSeek-V3.2-Exp",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DeepSeek-OCR",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "LPLB",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DeepSeek-Math-V2",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "Engram",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DeepSeek-OCR-2",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "TileKernels",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "awesome-deepseek-agent",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DeepSpec",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "deepseek-harness",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DeepJIT",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "DeepSelect",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "repo": "deepseek-recipe",
+      "sha": "",
+      "error": "HTTP Error 403: rate limit exceeded"
+    }
+  ]
+}

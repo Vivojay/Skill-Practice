@@ -1,0 +1,319 @@
+{
+  "checked_on": "2026-09-11",
+  "sources": [
+    {
+      "key": "2310.16818",
+      "url": "https://arxiv.org/abs/2310.16818",
+      "bytes": 43582,
+      "sha256": "a3a6f387ee91edce305fcbc5a10efd87ed30615c451ea82c2a47bad537a87770",
+      "status": "read"
+    },
+    {
+      "key": "2401.02954",
+      "url": "https://arxiv.org/abs/2401.02954",
+      "bytes": 54261,
+      "sha256": "61cd2edd64cb84bfa7002ab2e4c0d7253b3568a2ab23603a118fc157d5e0f19c",
+      "status": "read"
+    },
+    {
+      "key": "2401.06066",
+      "url": "https://arxiv.org/abs/2401.06066",
+      "bytes": 44316,
+      "sha256": "7792a54bde65415f03471736493b848dad5949c25f8eea7b4674ebaf0f1df01f",
+      "status": "read"
+    },
+    {
+      "key": "2401.14196",
+      "url": "https://arxiv.org/abs/2401.14196",
+      "bytes": 42339,
+      "sha256": "46acc8b03301a88bcfa197c98b3bad49acc8bdbe7305f61e5599390fc79a6536",
+      "status": "read"
+    },
+    {
+      "key": "2402.03300",
+      "url": "https://arxiv.org/abs/2402.03300",
+      "bytes": 42465,
+      "sha256": "32e37ca6d2af1522b1372c824d8ace3f400f44b3701a3cc69fd624254a39aeb5",
+      "status": "read"
+    },
+    {
+      "key": "2403.05525",
+      "url": "https://arxiv.org/abs/2403.05525",
+      "bytes": 45127,
+      "sha256": "116da0499874e52af9b43ad216eaf21b6f37dbf5d6b800b6fb39d17631f64ec2",
+      "status": "read"
+    },
+    {
+      "key": "2405.04434",
+      "url": "https://arxiv.org/abs/2405.04434",
+      "bytes": 67380,
+      "sha256": "6b2464b5d8d5ef270cad7b7dd691afa295546d8e2eecf8ef9082b50f548d3c73",
+      "status": "read"
+    },
+    {
+      "key": "2405.14333",
+      "url": "https://arxiv.org/abs/2405.14333",
+      "bytes": 42756,
+      "sha256": "8dc31bed8dac4c891e951d78a3b11a5e076c181a2062fe29715f0f691e5f9c82",
+      "status": "read"
+    },
+    {
+      "key": "2406.11931",
+      "url": "https://arxiv.org/abs/2406.11931",
+      "bytes": 46775,
+      "sha256": "87191a4b1b160468883e4370333e154a2a9abbdde6e186f1ae3406723e6b443e",
+      "status": "read"
+    },
+    {
+      "key": "2407.01906",
+      "url": "https://arxiv.org/abs/2407.01906",
+      "bytes": 42892,
+      "sha256": "ef252f650318eecdd457ac58d139f131f403a278313702ae18719089101175d6",
+      "status": "read"
+    },
+    {
+      "key": "2408.08152",
+      "url": "https://arxiv.org/abs/2408.08152",
+      "bytes": 43435,
+      "sha256": "61b14f8cf60c8dcacb2de70fcd5c4eadbc4d6004204005f090a57e400d363fc5",
+      "status": "read"
+    },
+    {
+      "key": "2408.14158",
+      "url": "https://arxiv.org/abs/2408.14158",
+      "bytes": 49319,
+      "sha256": "e73c9fed177ecc0b6594c605dd0dc49aab928f453a6c71bd9888eb81440393e8",
+      "status": "read"
+    },
+    {
+      "key": "2408.15664",
+      "url": "https://arxiv.org/abs/2408.15664",
+      "bytes": 42355,
+      "sha256": "b307253c32413a48d1dadc068a4d00a9161acb0db79dac168a190c4796154885",
+      "status": "read"
+    },
+    {
+      "key": "2410.13848",
+      "url": "https://arxiv.org/abs/2410.13848",
+      "bytes": 42726,
+      "sha256": "3b0e74ca4a9b8948179b6863c6d073a0a324271fa3f9bcd908125561e9808057",
+      "status": "read"
+    },
+    {
+      "key": "2411.07975",
+      "url": "https://arxiv.org/abs/2411.07975",
+      "bytes": 43214,
+      "sha256": "762d979e833ad70fea31c2962aeff16a41a491644fff8a5b55b2b13b4d2fb810",
+      "status": "read"
+    },
+    {
+      "key": "2412.10302",
+      "url": "https://arxiv.org/abs/2412.10302",
+      "bytes": 45624,
+      "sha256": "fdcc176783e37da5ddb3a72526f5ccd4ddb4cfe8f20225d23109166a1d552afb",
+      "status": "read"
+    },
+    {
+      "key": "2412.19437",
+      "url": "https://arxiv.org/abs/2412.19437",
+      "bytes": 73356,
+      "sha256": "870dc015b88218eed9694cd002675eb84077d1a18d965b2ca1973511355c6289",
+      "status": "read"
+    },
+    {
+      "key": "2501.12948",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "bytes": 75710,
+      "sha256": "6dda5a280d3ea97c487505c8869d23a3831ad661e0be81cf74b862569bc66b84",
+      "status": "read"
+    },
+    {
+      "key": "2501.17811",
+      "url": "https://arxiv.org/abs/2501.17811",
+      "bytes": 40635,
+      "sha256": "3509a635134cd0490d2bb3515c2117d61c0ad09b54500504a47de298c341f4b9",
+      "status": "read"
+    },
+    {
+      "key": "2502.11089",
+      "url": "https://arxiv.org/abs/2502.11089",
+      "bytes": 44015,
+      "sha256": "00f097026fcc7f59886050062822f3f0bf62fb3e1fc6510253c18405fe3b0eaf",
+      "status": "read"
+    },
+    {
+      "key": "2504.02495",
+      "url": "https://arxiv.org/abs/2504.02495",
+      "bytes": 44428,
+      "sha256": "19f9579d1c9cf26a05e031d636ce3707b20f7ac78cadba4091499b1f56f6649a",
+      "status": "read"
+    },
+    {
+      "key": "2504.21801",
+      "url": "https://arxiv.org/abs/2504.21801",
+      "bytes": 44547,
+      "sha256": "16caad1862fce6949dba54b121da3b400329aec16e3af71371825ff70f116bbe",
+      "status": "read"
+    },
+    {
+      "key": "2505.09343",
+      "url": "https://arxiv.org/abs/2505.09343",
+      "bytes": 46652,
+      "sha256": "495cd80345d28fa4176d141e5b250b7c2111fcdeb87b785758ad39f506807577",
+      "status": "read"
+    },
+    {
+      "key": "2510.18234",
+      "url": "https://arxiv.org/abs/2510.18234",
+      "bytes": 41193,
+      "sha256": "92641ed4d64391af4b3a7399fb31975804cd92b22f1206801d508558c67d7b71",
+      "status": "read"
+    },
+    {
+      "key": "2511.22570",
+      "url": "https://arxiv.org/abs/2511.22570",
+      "bytes": 43626,
+      "sha256": "8818c97e22b05c8bdc1a24b3c2f137a769bec076d8eb25bd2bb2ffbdd805de09",
+      "status": "read"
+    },
+    {
+      "key": "2512.02556",
+      "url": "https://arxiv.org/abs/2512.02556",
+      "bytes": 83552,
+      "sha256": "4d11e57dc6f620ff9b1ff8f79fa96a074152b8a0de7170dd23e444bae60bf786",
+      "status": "read"
+    },
+    {
+      "key": "2512.24880",
+      "url": "https://arxiv.org/abs/2512.24880",
+      "bytes": 43759,
+      "sha256": "11b22d89d8eb0a3bfce57350f3d1d65a1f6be13d76fde1ea16d762ad8e3c04db",
+      "status": "read"
+    },
+    {
+      "key": "2601.07372",
+      "url": "https://arxiv.org/abs/2601.07372",
+      "bytes": 45584,
+      "sha256": "537d8d0c72ff44646744f481b77d0ab4617f50554bf5e57b741c017c0132cf08",
+      "status": "read"
+    },
+    {
+      "key": "2601.20552",
+      "url": "https://arxiv.org/abs/2601.20552",
+      "bytes": 40652,
+      "sha256": "dd26eb72e34481a5527ab5ef87ed2065a770d1321bf8fba15256ac20397464da",
+      "status": "read"
+    },
+    {
+      "key": "2606.19348",
+      "url": "https://arxiv.org/abs/2606.19348",
+      "bytes": 93396,
+      "sha256": "fe89d8f32de038d4b0daeee279ab90d3e087bc5a1c7889aac38250dc9d9482a4",
+      "status": "read"
+    },
+    {
+      "key": "2607.05147",
+      "url": "https://arxiv.org/abs/2607.05147",
+      "bytes": 47695,
+      "sha256": "8ec03d6ec0163d860c4944039495c4dcabe1d313820e3f28d29adc91da255835",
+      "status": "read"
+    },
+    {
+      "key": "2401.06066v1-full",
+      "url": "https://arxiv.org/html/2401.06066v1",
+      "bytes": 426178,
+      "sha256": "bcf99a7dbd37f13b34b15a6c5c59ef8363e8b6d1b31283e5be71d66bbc6ad521",
+      "status": "read"
+    },
+    {
+      "key": "2405.04434v5-full",
+      "url": "https://arxiv.org/html/2405.04434v5",
+      "bytes": 726990,
+      "sha256": "fcaa6742195da31af8114fc9ca17f7d975fba893739e021ca30a73a3697fcc4e",
+      "status": "read"
+    },
+    {
+      "key": "2412.19437v2-full",
+      "url": "https://arxiv.org/html/2412.19437v2",
+      "bytes": 549949,
+      "sha256": "0768b63dd7e9cb632e71002c823275cf018a49dd3053ea9663c9c5a58eaee4a2",
+      "status": "read"
+    },
+    {
+      "key": "2402.03300v1-full",
+      "url": "https://arxiv.org/html/2402.03300v1",
+      "bytes": 462849,
+      "sha256": "d7725d89d90762eecf7951a7106d279b1d4bed83a307ce011549529ef323ce16",
+      "status": "read"
+    },
+    {
+      "key": "2408.15664v1-full",
+      "url": "https://arxiv.org/html/2408.15664v1",
+      "bytes": 158999,
+      "sha256": "4d6b18366c3c902c1ec840188001f4133b4b719591fd2ac4c22d6080865c3d8d",
+      "status": "read"
+    },
+    {
+      "key": "2605.15403v1-full",
+      "url": "https://arxiv.org/html/2605.15403v1",
+      "bytes": 557670,
+      "sha256": "3f6f0d07a0296b044784d783e627453776649e570460b457b516298b62ef8662",
+      "status": "read"
+    },
+    {
+      "key": "github-repos",
+      "url": "https://api.github.com/orgs/deepseek-ai/repos?per_page=100&type=public",
+      "bytes": 216414,
+      "sha256": "95352c043cc4063aa00349fe8018d6efb64686cae0be9b61c0a0df95333c8576",
+      "status": "read"
+    },
+    {
+      "key": "hf-models",
+      "url": "https://huggingface.co/api/models?author=deepseek-ai&limit=1000",
+      "status": "blocked",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "key": "news",
+      "url": "https://www.deepseek.com/news/",
+      "bytes": 91113,
+      "sha256": "9fb16a0b8d70945c5db65589716d56da7e9f5ee5bc49422811f4682a90331d62",
+      "status": "read"
+    },
+    {
+      "key": "DeepSeek-V3-commit",
+      "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-V3/commits/HEAD",
+      "bytes": 4810,
+      "sha256": "2fb950d67c8a4b7dda4323b8e34177ea216fbad0ee5bbc354cff659d29eed030",
+      "status": "read"
+    },
+    {
+      "key": "DeepSeek-V2-commit",
+      "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-V2/commits/HEAD",
+      "bytes": 7777,
+      "sha256": "70178b733e01673fde74fd41c673adf08d79819d198a6ead0f76a98b161c538e",
+      "status": "read"
+    },
+    {
+      "key": "DeepSeek-MoE-commit",
+      "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-MoE/commits/HEAD",
+      "bytes": 4250,
+      "sha256": "089d1e5056e1e1e4b8954e9e93f6b7f679733eb8f3a2d9c4e35caf477335eb90",
+      "status": "read"
+    },
+    {
+      "key": "DeepSeek-Math-commit",
+      "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-Math/commits/HEAD",
+      "bytes": 6299,
+      "sha256": "71d649be056387be0ef16337cffec07487bdb486993f60a0dc2313f41a71f456",
+      "status": "read"
+    },
+    {
+      "key": "open-infra-index-commit",
+      "url": "https://api.github.com/repos/deepseek-ai/open-infra-index/commits/HEAD",
+      "bytes": 4393,
+      "sha256": "582d412aadbc9139c3b87ce40170f0f5d0caafff4a515e5c5825410961761364",
+      "status": "read"
+    }
+  ]
+}

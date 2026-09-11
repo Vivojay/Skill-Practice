@@ -1,0 +1,75 @@
+{
+  "config": {
+    "seed": 11,
+    "steps": 120,
+    "width": 32,
+    "heads": 4,
+    "kv_rank": 8,
+    "q_rank": 16,
+    "batch": 2,
+    "length": 16,
+    "lr": 0.01,
+    "wall_budget_seconds": 120
+  },
+  "seed": 11,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "python -m examples.mla",
+  "source_commit": "55af5caaf1a267aa831e72ca295c30fd5c8cad88",
+  "created_utc": "2026-09-11T06:40:28Z",
+  "first_mse": 0.9113858342170715,
+  "final_mse": 1.4844532415736467e-05,
+  "parameters": 3224,
+  "initial_memory": {
+    "parameter_bytes": 12896,
+    "buffer_bytes": 0,
+    "process_working_set_bytes": 425287680,
+    "process_peak_working_set_bytes": 425287680
+  },
+  "memory": {
+    "parameter_bytes": 12896,
+    "buffer_bytes": 0,
+    "optimizer_tensor_bytes": 25832,
+    "process_working_set_bytes": 427343872,
+    "process_peak_working_set_bytes": 427474944
+  },
+  "train_time": {
+    "median_ms": 3.5477499914122745,
+    "iqr_ms": 0.7951000006869435,
+    "samples": 120
+  },
+  "checkpoint": "artifacts/mla/checkpoint.pt",
+  "task": "fixed tiny batch: predict preceding input vector; not held-out quality",
+  "compressed": {
+    "cache_bytes": 1536,
+    "prefill": {
+      "median_ms": 1.095100014936179,
+      "iqr_ms": 0.2599000290501863,
+      "samples": 25
+    },
+    "decode": {
+      "median_ms": 0.9886000188998878,
+      "iqr_ms": 0.12240002979524434,
+      "samples": 25
+    }
+  },
+  "expanded": {
+    "cache_bytes": 10240,
+    "prefill": {
+      "median_ms": 0.9849000198300928,
+      "iqr_ms": 0.16189998132176697,
+      "samples": 25
+    },
+    "decode": {
+      "median_ms": 0.8684000058565289,
+      "iqr_ms": 0.14100002590566874,
+      "samples": 25
+    }
+  },
+  "max_output_error": 7.152557373046875e-07,
+  "metadata_note": "Module invocation reconstructed from executed command log; initial logger expanded -m to a script path. Metrics unchanged."
+}

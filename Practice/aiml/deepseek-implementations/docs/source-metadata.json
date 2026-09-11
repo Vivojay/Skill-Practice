@@ -1,0 +1,312 @@
+[
+  {
+    "id": "DREAMCRAFT",
+    "arxiv": "2310.16818",
+    "title": "DreamCraft3D: Hierarchical 3D Generation with Bootstrapped Diffusion Prior",
+    "latest_version": "v2",
+    "latest_date": "Thu, 26 Oct 2023 06:54:22",
+    "history": "Submission history From: Jingxiang Sun [ view email ] [v1] Wed, 25 Oct 2023 17:50:10 UTC (41,704 KB) [v2] Thu, 26 Oct 2023 06:54:22 UTC (41,704 KB)",
+    "evidence": "Collaboration: DeepSeek AI + Tsinghua + independent researcher; full paper author block",
+    "evidence_url": "https://github.com/deepseek-ai/DreamCraft3D"
+  },
+  {
+    "id": "LLM",
+    "arxiv": "2401.02954",
+    "title": "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism",
+    "latest_version": "v1",
+    "latest_date": "Fri, 5 Jan 2024 18:59:13",
+    "history": "Submission history From: DeepSeek Inc. [ view email ] [v1] Fri, 5 Jan 2024 18:59:13 UTC (6,677 KB)",
+    "evidence": "Official repository; arXiv corporate author",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-LLM"
+  },
+  {
+    "id": "MOE",
+    "arxiv": "2401.06066",
+    "title": "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models",
+    "latest_version": "v1",
+    "latest_date": "Thu, 11 Jan 2024 17:31:42",
+    "history": "Submission history From: Damai Dai [ view email ] [v1] Thu, 11 Jan 2024 17:31:42 UTC (293 KB)",
+    "evidence": "Collaboration: DeepSeek-AI, PKU, Tsinghua, Nanjing; paper author block",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-MoE"
+  },
+  {
+    "id": "CODER",
+    "arxiv": "2401.14196",
+    "title": "DeepSeek-Coder: When the Large Language Model Meets Programming -- The Rise of Code Intelligence",
+    "latest_version": "v2",
+    "latest_date": "Fri, 26 Jan 2024 09:23:11",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Thu, 25 Jan 2024 14:17:53 UTC (3,001 KB) [v2] Fri, 26 Jan 2024 09:23:11 UTC (3,001 KB)",
+    "evidence": "Official repository; linked arXiv report",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-Coder"
+  },
+  {
+    "id": "MATH",
+    "arxiv": "2402.03300",
+    "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+    "latest_version": "v3",
+    "latest_date": "Sat, 27 Apr 2024 15:25:53",
+    "history": "Submission history From: Zhihong Shao [ view email ] [v1] Mon, 5 Feb 2024 18:55:32 UTC (3,417 KB) [v2] Tue, 6 Feb 2024 18:39:38 UTC (3,417 KB) [v3] Sat, 27 Apr 2024 15:25:53 UTC (3,417 KB)",
+    "evidence": "Official repository; linked arXiv report",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-Math"
+  },
+  {
+    "id": "VL",
+    "arxiv": "2403.05525",
+    "title": "DeepSeek-VL: Towards Real-World Vision-Language Understanding",
+    "latest_version": "v2",
+    "latest_date": "Mon, 11 Mar 2024 16:47:41",
+    "history": "Submission history From: Haoyu Lu [ view email ] [v1] Fri, 8 Mar 2024 18:46:00 UTC (7,220 KB) [v2] Mon, 11 Mar 2024 16:47:41 UTC (7,262 KB)",
+    "evidence": "Official repository; linked report",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-VL"
+  },
+  {
+    "id": "V2",
+    "arxiv": "2405.04434",
+    "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+    "latest_version": "v5",
+    "latest_date": "Wed, 19 Jun 2024 06:04:17",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Tue, 7 May 2024 15:56:43 UTC (431 KB) [v2] Wed, 8 May 2024 02:43:34 UTC (431 KB) [v3] Thu, 16 May 2024 17:25:01 UTC (432 KB) [v4] Fri, 24 May 2024 15:24:58 UTC (432 KB) [v5] Wed, 19 Jun 2024 06:04:17 UTC (432 KB)",
+    "evidence": "Official repository; corporate arXiv author",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-V2"
+  },
+  {
+    "id": "PROVER",
+    "arxiv": "2405.14333",
+    "title": "DeepSeek-Prover: Advancing Theorem Proving in LLMs through Large-Scale Synthetic Data",
+    "latest_version": "v1",
+    "latest_date": "Thu, 23 May 2024 09:03:42",
+    "history": "Submission history From: Huajian Xin [ view email ] [v1] Thu, 23 May 2024 09:03:42 UTC (4,425 KB)",
+    "evidence": "Collaboration: paper author block lists DeepSeek, Sun Yat-sen, Edinburgh, MBZUAI",
+    "evidence_url": "https://arxiv.org/html/2405.14333v1"
+  },
+  {
+    "id": "CODER_V2",
+    "arxiv": "2406.11931",
+    "title": "DeepSeek-Coder-V2: Breaking the Barrier of Closed-Source Models in Code Intelligence",
+    "latest_version": "v1",
+    "latest_date": "Mon, 17 Jun 2024 13:51:35",
+    "history": "Submission history From: Qihao Zhu [ view email ] [v1] Mon, 17 Jun 2024 13:51:35 UTC (3,182 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-Coder-V2"
+  },
+  {
+    "id": "ESFT",
+    "arxiv": "2407.01906",
+    "title": "Let the Expert Stick to His Last: Expert-Specialized Fine-Tuning for Sparse Architectural Large Language Models",
+    "latest_version": "v2",
+    "latest_date": "Fri, 5 Jul 2024 03:23:59",
+    "history": "Submission history From: Deli Chen [ view email ] [v1] Tue, 2 Jul 2024 03:11:13 UTC (8,250 KB) [v2] Fri, 5 Jul 2024 03:23:59 UTC (8,250 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/ESFT"
+  },
+  {
+    "id": "PROVER_1_5",
+    "arxiv": "2408.08152",
+    "title": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+    "latest_version": "v1",
+    "latest_date": "Thu, 15 Aug 2024 13:40:03",
+    "history": "Submission history From: Huajian Xin [ view email ] [v1] Thu, 15 Aug 2024 13:40:03 UTC (1,259 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-Prover-V1.5"
+  },
+  {
+    "id": "FIRE_FLYER",
+    "arxiv": "2408.14158",
+    "title": "Fire-Flyer AI-HPC: A Cost-Effective Software-Hardware Co-Design for Deep Learning",
+    "latest_version": "v2",
+    "latest_date": "Sat, 31 Aug 2024 13:33:22",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Mon, 26 Aug 2024 10:11:56 UTC (3,414 KB) [v2] Sat, 31 Aug 2024 13:33:22 UTC (3,414 KB)",
+    "evidence": "Paper v2 explicitly says DeepSeek-AI, Beijing; historical HFAiLab lineage separated below",
+    "evidence_url": "https://github.com/deepseek-ai/open-infra-index"
+  },
+  {
+    "id": "LOSS_FREE",
+    "arxiv": "2408.15664",
+    "title": "Auxiliary-Loss-Free Load Balancing Strategy for Mixture-of-Experts",
+    "latest_version": "v1",
+    "latest_date": "Wed, 28 Aug 2024 09:31:09",
+    "history": "Submission history From: Damai Dai [ view email ] [v1] Wed, 28 Aug 2024 09:31:09 UTC (9,927 KB)",
+    "evidence": "Collaboration: DeepSeek-AI + PKU in paper author block",
+    "evidence_url": "https://arxiv.org/html/2408.15664v1"
+  },
+  {
+    "id": "JANUS",
+    "arxiv": "2410.13848",
+    "title": "Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation",
+    "latest_version": "v1",
+    "latest_date": "Thu, 17 Oct 2024 17:58:37",
+    "history": "Submission history From: Xiaokang Chen [ view email ] [v1] Thu, 17 Oct 2024 17:58:37 UTC (5,510 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/Janus"
+  },
+  {
+    "id": "JANUS_FLOW",
+    "arxiv": "2411.07975",
+    "title": "JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation",
+    "latest_version": "v2",
+    "latest_date": "Mon, 24 Mar 2025 08:33:32",
+    "history": "Submission history From: Yiyang Ma [ view email ] [v1] Tue, 12 Nov 2024 17:55:10 UTC (1,324 KB) [v2] Mon, 24 Mar 2025 08:33:32 UTC (1,327 KB)",
+    "evidence": "Official repository hosts distinct report",
+    "evidence_url": "https://github.com/deepseek-ai/Janus"
+  },
+  {
+    "id": "VL2",
+    "arxiv": "2412.10302",
+    "title": "DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding",
+    "latest_version": "v1",
+    "latest_date": "Fri, 13 Dec 2024 17:37:48",
+    "history": "Submission history From: Xiaokang Chen [ view email ] [v1] Fri, 13 Dec 2024 17:37:48 UTC (5,498 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-VL2"
+  },
+  {
+    "id": "V3",
+    "arxiv": "2412.19437",
+    "title": "DeepSeek-V3 Technical Report",
+    "latest_version": "v2",
+    "latest_date": "Tue, 18 Feb 2025 17:26:38",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Fri, 27 Dec 2024 04:03:16 UTC (1,114 KB) [v2] Tue, 18 Feb 2025 17:26:38 UTC (1,114 KB)",
+    "evidence": "Official repository; corporate arXiv author",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-V3"
+  },
+  {
+    "id": "R1",
+    "arxiv": "2501.12948",
+    "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+    "latest_version": "v2",
+    "latest_date": "Sun, 4 Jan 2026 03:57:36",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Wed, 22 Jan 2025 15:19:35 UTC (928 KB) [v2] Sun, 4 Jan 2026 03:57:36 UTC (1,562 KB)",
+    "evidence": "Official repository; corporate arXiv author",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-R1"
+  },
+  {
+    "id": "JANUS_PRO",
+    "arxiv": "2501.17811",
+    "title": "Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling",
+    "latest_version": "v1",
+    "latest_date": "Wed, 29 Jan 2025 18:00:19",
+    "history": "Submission history From: Xiaokang Chen [ view email ] [v1] Wed, 29 Jan 2025 18:00:19 UTC (3,263 KB)",
+    "evidence": "Official repository hosts distinct report",
+    "evidence_url": "https://github.com/deepseek-ai/Janus"
+  },
+  {
+    "id": "NSA",
+    "arxiv": "2502.11089",
+    "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+    "latest_version": "v2",
+    "latest_date": "Thu, 27 Feb 2025 09:01:21",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Sun, 16 Feb 2025 11:53:44 UTC (915 KB) [v2] Thu, 27 Feb 2025 09:01:21 UTC (916 KB)",
+    "evidence": "Collaboration: DeepSeek-AI, PKU and University of Washington in full paper author block",
+    "evidence_url": "https://arxiv.org/html/2502.11089v2"
+  },
+  {
+    "id": "GRM",
+    "arxiv": "2504.02495",
+    "title": "Inference-Time Scaling for Generalist Reward Modeling",
+    "latest_version": "v3",
+    "latest_date": "Thu, 25 Sep 2025 05:35:26",
+    "history": "Submission history From: Zijun Liu [ view email ] [v1] Thu, 3 Apr 2025 11:19:49 UTC (3,815 KB) [v2] Sat, 5 Apr 2025 17:04:00 UTC (3,809 KB) [v3] Thu, 25 Sep 2025 05:35:26 UTC (1,226 KB)",
+    "evidence": "Collaboration: DeepSeek-AI + Tsinghua, full v3 author block",
+    "evidence_url": "https://arxiv.org/html/2504.02495v3"
+  },
+  {
+    "id": "PROVER_V2",
+    "arxiv": "2504.21801",
+    "title": "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition",
+    "latest_version": "v2",
+    "latest_date": "Fri, 18 Jul 2025 08:20:23",
+    "history": "Submission history From: Zhihong Shao [ view email ] [v1] Wed, 30 Apr 2025 16:57:48 UTC (1,239 KB) [v2] Fri, 18 Jul 2025 08:20:23 UTC (1,245 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-Prover-V2"
+  },
+  {
+    "id": "INSIGHTS_V3",
+    "arxiv": "2505.09343",
+    "title": "Insights into DeepSeek-V3: Scaling Challenges and Reflections on Hardware for AI Architectures",
+    "latest_version": "v2",
+    "latest_date": "Tue, 23 Dec 2025 03:00:00",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Wed, 14 May 2025 12:39:03 UTC (1,808 KB) [v2] Tue, 23 Dec 2025 03:00:00 UTC (1,787 KB)",
+    "evidence": "Official index links paper; arXiv title verified",
+    "evidence_url": "https://github.com/deepseek-ai/open-infra-index"
+  },
+  {
+    "id": "OCR",
+    "arxiv": "2510.18234",
+    "title": "DeepSeek-OCR: Contexts Optical Compression",
+    "latest_version": "v1",
+    "latest_date": "Tue, 21 Oct 2025 02:41:44",
+    "history": "Submission history From: Haoran Wei [ view email ] [v1] Tue, 21 Oct 2025 02:41:44 UTC (7,007 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-OCR"
+  },
+  {
+    "id": "MATH_V2",
+    "arxiv": "2511.22570",
+    "title": "DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning",
+    "latest_version": "v1",
+    "latest_date": "Thu, 27 Nov 2025 16:01:22",
+    "history": "Submission history From: Zhihong Shao [ view email ] [v1] Thu, 27 Nov 2025 16:01:22 UTC (57 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-Math-V2"
+  },
+  {
+    "id": "V3_2",
+    "arxiv": "2512.02556",
+    "title": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+    "latest_version": "v1",
+    "latest_date": "Tue, 2 Dec 2025 09:25:14",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Tue, 2 Dec 2025 09:25:14 UTC (593 KB)",
+    "evidence": "Corporate arXiv author; official website research link",
+    "evidence_url": "https://arxiv.org/html/2512.02556v1"
+  },
+  {
+    "id": "MHC",
+    "arxiv": "2512.24880",
+    "title": "mHC: Manifold-Constrained Hyper-Connections",
+    "latest_version": "v2",
+    "latest_date": "Mon, 5 Jan 2026 16:51:18",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Wed, 31 Dec 2025 14:16:26 UTC (221 KB) [v2] Mon, 5 Jan 2026 16:51:18 UTC (221 KB)",
+    "evidence": "DeepSeek-AI in full v2 author block",
+    "evidence_url": "https://arxiv.org/html/2512.24880v2"
+  },
+  {
+    "id": "ENGRAM",
+    "arxiv": "2601.07372",
+    "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+    "latest_version": "v2",
+    "latest_date": "Sun, 12 Jul 2026 07:41:31",
+    "history": "Submission history From: Xin Cheng [ view email ] [v1] Mon, 12 Jan 2026 09:54:49 UTC (394 KB) [v2] Sun, 12 Jul 2026 07:41:31 UTC (395 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/Engram"
+  },
+  {
+    "id": "OCR2",
+    "arxiv": "2601.20552",
+    "title": "DeepSeek-OCR 2: Visual Causal Flow",
+    "latest_version": "v1",
+    "latest_date": "Wed, 28 Jan 2026 12:46:07",
+    "history": "Submission history From: Haoran Wei [ view email ] [v1] Wed, 28 Jan 2026 12:46:07 UTC (696 KB)",
+    "evidence": "Official repository",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSeek-OCR-2"
+  },
+  {
+    "id": "V4",
+    "arxiv": "2606.19348",
+    "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+    "latest_version": "v1",
+    "latest_date": "Sun, 26 Apr 2026 14:49:33",
+    "history": "Submission history From: Wenfeng Liang [ view email ] [v1] Sun, 26 Apr 2026 14:49:33 UTC (2,854 KB)",
+    "evidence": "Corporate arXiv author; official V4 release and HF report",
+    "evidence_url": "https://arxiv.org/html/2606.19348v1"
+  },
+  {
+    "id": "DSPARK",
+    "arxiv": "2607.05147",
+    "title": "DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation",
+    "latest_version": "v1",
+    "latest_date": "Mon, 6 Jul 2026 14:28:06",
+    "history": "Submission history From: Xin Cheng [ view email ] [v1] Mon, 6 Jul 2026 14:28:06 UTC (376 KB)",
+    "evidence": "Official DeepSpec README cites this exact identifier",
+    "evidence_url": "https://github.com/deepseek-ai/DeepSpec"
+  }
+]
