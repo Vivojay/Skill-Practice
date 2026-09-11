@@ -81,6 +81,11 @@ class SparseMLA(MLA):
         self.top_k, self.dense_warmup = top_k, False
         self.index_objective = None
 
+    def __getstate__(self):
+        state = super().__getstate__()
+        state['index_objective'] = None
+        return state
+
     def _sparse(self, x, cache, start):
         q,k,w = self.indexer.project(x,self.q_norm(self.q_down(x)),start)
         if cache is not None:

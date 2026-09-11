@@ -80,6 +80,11 @@ class Block(nn.Module):
         self.ffn_norm = nn.RMSNorm(width, eps=1e-6)
         self.routing = None
 
+    def __getstate__(self):
+        state = super().__getstate__()
+        state['routing'] = None
+        return state
+
     def feed_forward(self, x):
         h = self.ffn_norm(x)
         if isinstance(self.ffn, MoE):
@@ -89,10 +94,10 @@ class Block(nn.Module):
             y, self.routing = self.ffn(h), None
         return x + y
 
-    def forward(self, x, offset=0):
+    def forward(self, x, offset=0, tokens=None):
         return self.feed_forward(x + self.attention(self.attention_norm(x), offset=offset))
 
-    def decode(self, x, cache=None, start=None):
+    def decode(self, x, cache=None, start=None, tokens=None):
         y, cache, _ = self.attention.decode(self.attention_norm(x), cache, start=start)
         return self.feed_forward(x+y), cache
 
@@ -110,7 +115,7 @@ class Decoder(nn.Module):
             raise ValueError('Need nonempty [batch,time] tokens and nonnegative offset')
         x = self.embedding(tokens)
         for block in self.blocks:
-            x = block(x, offset)
+            x = block(x, offset, tokens=tokens)
         return x
 
     def forward(self, tokens, offset=0):
@@ -128,11 +133,17 @@ class Decoder(nn.Module):
             raise ValueError('Cannot mix empty and populated layer caches')
         if caches[0] is not None and len({(c.offset,c.length) for c in caches}) != 1:
             raise ValueError('Layer caches must cover the same positions')
-        x, updated = self.embedding(tokens), []
+        x, updated = self.embed_tokens(tokens), []
         for block, cache in zip(self.blocks, caches):
-            x, cache = block.decode(x, cache, start)
+            x, cache = block.decode(x, cache, start, tokens=tokens)
             updated.append(cache)
-        return self.head(self.norm(x)), updated
+        return self.head(self.norm(self.collapse_hidden(x))), updated
+
+    def embed_tokens(self,tokens):
+        return self.embedding(tokens)
+
+    def collapse_hidden(self,x):
+        return x
 
     @torch.no_grad()
     def generate(self, tokens, max_new_tokens=8):

@@ -9,14 +9,18 @@ from torch.nn import functional as F
 
 
 class Expert(nn.Module):
-    def __init__(self, width, hidden):
+    def __init__(self, width, hidden, limit=0.):
         super().__init__()
         self.gate = nn.Linear(width, hidden, bias=False)
         self.up = nn.Linear(width, hidden, bias=False)
         self.down = nn.Linear(hidden, width, bias=False)
+        self.limit = limit
 
     def forward(self, x):
-        return self.down(F.silu(self.gate(x)) * self.up(x))
+        gate, up = self.gate(x), self.up(x)
+        if self.limit:
+            gate, up = gate.clamp(max=self.limit), up.clamp(-self.limit,self.limit)
+        return self.down(F.silu(gate) * up)
 
 
 def balance_losses(scores, indices, device_groups=1):
@@ -58,7 +62,7 @@ class MoE(nn.Module):
         self.register_buffer('ema_load', torch.zeros(routed))
         self.register_buffer('updates', torch.tensor(0))
 
-    def route(self, x):
+    def route(self, x, indices=None):
         logits = self.router(x)
         if self.score == 'softmax':
             scores = logits.softmax(-1)
@@ -74,15 +78,16 @@ class MoE(nn.Module):
             keep = torch.zeros_like(group_scores, dtype=torch.bool)
             keep.scatter_(-1, group_scores.topk(self.top_groups, dim=-1).indices, True)
             choice = grouped.masked_fill(~keep[..., None], -torch.inf).flatten(-2)
-        indices = choice.topk(self.top_k, dim=-1).indices
+        if indices is None:
+            indices = choice.topk(self.top_k, dim=-1).indices
         weights = scores.gather(-1, indices)
         if self.normalize:
             weights = weights / weights.sum(-1, keepdim=True).clamp_min(torch.finfo(weights.dtype).tiny)
         return scores, indices, weights * self.route_scale
 
-    def forward(self, x):
+    def forward(self, x, indices=None):
         flat = x.reshape(-1, x.shape[-1])
-        scores, indices, weights = self.route(flat)
+        scores, indices, weights = self.route(flat,indices)
         out = torch.zeros_like(flat)
         for i, expert in enumerate(self.experts):
             rows, slots = torch.where(indices == i)
