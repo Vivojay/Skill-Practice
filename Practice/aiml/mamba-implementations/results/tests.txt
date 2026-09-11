@@ -1,0 +1,12 @@
+........................................{"model": "mamba1", "initial_loss": 1.394697666168213, "final_loss": 5.7904097047867253e-05, "fixed_batch_accuracy": 1.0, "updates": 400, "seed": 1, "data_seed": 1001}
+.{"model": "mamba2", "initial_loss": 1.3755123615264893, "final_loss": 3.915944762411527e-05, "fixed_batch_accuracy": 1.0, "updates": 400, "seed": 1, "data_seed": 1001}
+.{"model": "mamba3", "initial_loss": 1.3856970071792603, "final_loss": 9.270657028537244e-05, "fixed_batch_accuracy": 1.0, "updates": 400, "seed": 1, "data_seed": 1001}
+.{"model": "mamba1_constant", "initial_loss": 1.6784707307815552, "final_loss": 4.933643504045904e-05, "fixed_batch_accuracy": 1.0, "updates": 400, "seed": 1, "data_seed": 1001}
+.....
+============================= slowest 5 durations =============================
+14.01s call     tests/test_training.py::test_fixed_batch_overfit[mamba3]
+9.04s call     tests/test_training.py::test_fixed_batch_overfit[mamba1]
+6.22s call     tests/test_training.py::test_fixed_batch_overfit[mamba1_constant]
+3.23s call     tests/test_training.py::test_fixed_batch_overfit[mamba2]
+1.16s call     tests/test_mamba1.py::test_core_unrolled_reference_and_gradients
+48 passed in 36.33s

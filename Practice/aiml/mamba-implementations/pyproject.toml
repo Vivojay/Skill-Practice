@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mamba-minimal"
+version = "0.1.0"
+description = "Small, explicit PyTorch implementations of Mamba research"
+requires-python = ">=3.12"
+dependencies = ["torch>=2.7", "pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["mamba_minimal*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: fixed-batch optimization checks"]

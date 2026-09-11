@@ -1,0 +1,50 @@
+{
+  "config": {
+    "width": 32,
+    "state_size": 8,
+    "layers": 1,
+    "length": 32,
+    "copies": 3,
+    "batch_size": 16,
+    "steps": 300,
+    "lr": 0.003,
+    "eval_batches": 16,
+    "preset": "bounded",
+    "classes": 4,
+    "seed": 1,
+    "train_seed": 1001,
+    "eval_seed": 2001,
+    "long_eval_seed": 3001,
+    "optimizer": "Adam",
+    "weight_decay": 0,
+    "clip_norm": 1.0,
+    "dtype": "float32"
+  },
+  "device": "cpu",
+  "device_name": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "created_utc": "2026-09-11T06:28:06.867352+00:00",
+  "model": "mamba3",
+  "checkpoint": "results\\bounded\\mamba3\\checkpoint.pt",
+  "held_out": [
+    {
+      "length": 32,
+      "seed": 2001,
+      "examples": 256,
+      "recall_tokens": 768,
+      "loss": 0.26704317424446344,
+      "accuracy": 0.8919270820915699
+    },
+    {
+      "length": 64,
+      "seed": 3001,
+      "examples": 256,
+      "recall_tokens": 768,
+      "loss": 0.42602643463760614,
+      "accuracy": 0.8242187462747097
+    }
+  ]
+}

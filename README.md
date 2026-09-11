@@ -11,5 +11,6 @@ Implementations and experiments in computer science.
 | [Practice/projects/chess](Practice/projects/chess/) | Chess scaffold, speech transcription and text-to-move experiments. |
 | [Practice/projects/recaman](Practice/projects/recaman/) | Recamán sequence implementation. |
 | [Practice/aiml/deepseek-implementations](Practice/aiml/deepseek-implementations/README.md) | DeepSeek research and implementation files. |
+| [Practice/aiml/mamba-implementations](Practice/aiml/mamba-implementations/README.md) | Mamba state-space implementations, streaming tests and selective-copy experiments. |
 
 Runtime requirements and validation vary by directory.

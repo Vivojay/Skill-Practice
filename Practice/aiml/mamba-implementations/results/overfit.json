@@ -1,0 +1,60 @@
+{
+  "source": "results/tests.txt",
+  "configuration": {
+    "width": 32,
+    "state_size": 8,
+    "layers": 1,
+    "expand": 2,
+    "head_dim": 8,
+    "length": 16,
+    "copies": 2,
+    "classes": 4,
+    "batch_size": 4,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "weight_decay": 0,
+    "clip_norm": 1,
+    "updates": 400,
+    "device": "cpu",
+    "threads": 1
+  },
+  "environment": "results/environment.json",
+  "measurements": [
+    {
+      "model": "mamba1",
+      "initial_loss": 1.394697666168213,
+      "final_loss": 5.7904097047867253e-05,
+      "fixed_batch_accuracy": 1.0,
+      "updates": 400,
+      "seed": 1,
+      "data_seed": 1001
+    },
+    {
+      "model": "mamba2",
+      "initial_loss": 1.3755123615264893,
+      "final_loss": 3.915944762411527e-05,
+      "fixed_batch_accuracy": 1.0,
+      "updates": 400,
+      "seed": 1,
+      "data_seed": 1001
+    },
+    {
+      "model": "mamba3",
+      "initial_loss": 1.3856970071792603,
+      "final_loss": 9.270657028537244e-05,
+      "fixed_batch_accuracy": 1.0,
+      "updates": 400,
+      "seed": 1,
+      "data_seed": 1001
+    },
+    {
+      "model": "mamba1_constant",
+      "initial_loss": 1.6784707307815552,
+      "final_loss": 4.933643504045904e-05,
+      "fixed_batch_accuracy": 1.0,
+      "updates": 400,
+      "seed": 1,
+      "data_seed": 1001
+    }
+  ]
+}

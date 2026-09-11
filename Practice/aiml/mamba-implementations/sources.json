@@ -1,0 +1,57 @@
+{
+  "inspected_date": "2026-09-11",
+  "repository": "https://github.com/state-spaces/mamba",
+  "commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+  "files": [
+    {
+      "path": "mamba_ssm/modules/mamba2_simple.py",
+      "sha256": "61149f49cf58cfaeeeef6476dfb25468ad0260760c1ab240fdae97ec93c170f5"
+    },
+    {
+      "path": "mamba_ssm/modules/mamba3.py",
+      "sha256": "930c3dfa04dea8444b1c9ee8b6ac9cbbc7ef492dc5ae1f4c83051ef953eca33c"
+    },
+    {
+      "path": "mamba_ssm/modules/mamba_simple.py",
+      "sha256": "a17e4c51b582dc0d4d690a649eba521cd0c1ee3dc8f0473a0967cdc9ec0874e3"
+    },
+    {
+      "path": "mamba_ssm/modules/ssd_minimal.py",
+      "sha256": "6442a9fe25a6792258df657392ab1fab4dd873ee777d9dd5783cc76030218e07"
+    },
+    {
+      "path": "mamba_ssm/ops/selective_scan_interface.py",
+      "sha256": "a570f4f15a2eebabf62024a9ffb0d1dde04280300405e1632f43809f448bfb1a"
+    },
+    {
+      "path": "mamba_ssm/ops/triton/mamba3/angle_dt.py",
+      "sha256": "7d99f8cff37371cfbfe9d4dd36f17a16135fb07f2c6e14add3ad4dd5c0034e2e"
+    },
+    {
+      "path": "mamba_ssm/ops/triton/mamba3/mamba3_siso_combined.py",
+      "sha256": "410ad57555b5841fba7bd76fdafdc3ddf82741176489c3e3493f5c6f3c0c6012"
+    },
+    {
+      "path": "mamba_ssm/ops/triton/mamba3/mamba3_siso_step.py",
+      "sha256": "66d2471245e47de4207eb633deb3e8415034f9e718b38d0955f62a6262a3ae61"
+    },
+    {
+      "path": "tests/ops/triton/test_mamba3_siso.py",
+      "sha256": "b68ec350f557a4124516f7d1c916ec756a48389fed4387791aadb74492531e85"
+    }
+  ],
+  "papers": [
+    {
+      "arxiv": "2312.00752v2",
+      "url": "https://arxiv.org/html/2312.00752v2"
+    },
+    {
+      "arxiv": "2405.21060v1",
+      "url": "https://arxiv.org/html/2405.21060v1"
+    },
+    {
+      "arxiv": "2603.15569v1",
+      "url": "https://arxiv.org/html/2603.15569v1"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "config": {
+    "width": 32,
+    "state_size": 8,
+    "layers": 1,
+    "length": 32,
+    "copies": 3,
+    "batch_size": 4,
+    "steps": 5,
+    "lr": 0.003,
+    "eval_batches": 2,
+    "preset": "smoke",
+    "classes": 4,
+    "seed": 1,
+    "train_seed": 1001,
+    "eval_seed": 2001,
+    "long_eval_seed": 3001,
+    "optimizer": "Adam",
+    "weight_decay": 0,
+    "clip_norm": 1.0,
+    "dtype": "float32"
+  },
+  "device": "cpu",
+  "device_name": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "created_utc": "2026-09-11T06:28:01.186804+00:00",
+  "model": "mamba3",
+  "parameters": 8160,
+  "train_seconds": 0.34236549999332055,
+  "final_training_loss": 1.4754489660263062,
+  "mean_last_20_training_loss": 1.4025357484817504,
+  "held_out": [
+    {
+      "length": 32,
+      "seed": 2001,
+      "examples": 8,
+      "recall_tokens": 24,
+      "loss": 1.4327313899993896,
+      "accuracy": 0.2499999962747097
+    },
+    {
+      "length": 64,
+      "seed": 3001,
+      "examples": 8,
+      "recall_tokens": 24,
+      "loss": 1.4969132542610168,
+      "accuracy": 0.1250000037252903
+    }
+  ],
+  "elapsed_seconds": 0.43654879997484386
+}

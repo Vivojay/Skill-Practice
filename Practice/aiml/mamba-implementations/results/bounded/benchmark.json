@@ -1,0 +1,60 @@
+{
+  "config": {
+    "width": 32,
+    "state_size": 8,
+    "layers": 1,
+    "length": 32,
+    "copies": 3,
+    "batch_size": 16,
+    "steps": 300,
+    "lr": 0.003,
+    "eval_batches": 16,
+    "preset": "bounded",
+    "classes": 4,
+    "seed": 1,
+    "train_seed": 1001,
+    "eval_seed": 2001,
+    "long_eval_seed": 3001,
+    "optimizer": "Adam",
+    "weight_decay": 0,
+    "clip_norm": 1.0,
+    "dtype": "float32"
+  },
+  "device": "cpu",
+  "device_name": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "created_utc": "2026-09-11T06:21:39.668433+00:00",
+  "measurements": [
+    {
+      "model": "mamba1",
+      "parameters": 8896,
+      "measured_steps": 5,
+      "warmup_steps": 2,
+      "seconds_per_step": 0.04512014000210911
+    },
+    {
+      "model": "mamba2",
+      "parameters": 7912,
+      "measured_steps": 5,
+      "warmup_steps": 2,
+      "seconds_per_step": 0.02515232000150718
+    },
+    {
+      "model": "mamba3",
+      "parameters": 8160,
+      "measured_steps": 5,
+      "warmup_steps": 2,
+      "seconds_per_step": 0.08926427999977023
+    },
+    {
+      "model": "mamba1_constant",
+      "parameters": 7762,
+      "measured_steps": 5,
+      "warmup_steps": 2,
+      "seconds_per_step": 0.05411617999779992
+    }
+  ]
+}
