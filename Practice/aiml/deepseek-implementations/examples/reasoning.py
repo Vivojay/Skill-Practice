@@ -130,7 +130,8 @@ def main():
             save(student_path,student,student_optimizer,dict(config,family=family),config['student_steps'],generator)
             extra['students'][family] = student_path
         if not stage.startswith('student_'):
-            reference = frozen_copy(policy)
+            if stage not in ('reasoning_rl','mixed_rl'):
+                reference = frozen_copy(policy)
             row['heldout'] = evaluate(policy.eval(),reference,prompts[heldout],answers[heldout],args.seed+8000)
             row['train_greedy'] = evaluate(policy,reference,train,truth,args.seed+8001)['greedy_exact_correctness']
         row['seconds'] = time.perf_counter()-tick
