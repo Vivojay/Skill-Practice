@@ -75,3 +75,16 @@ def test_tiny_batch_overfit():
         loss = (model(x)[0]-target).square().mean()
         loss.backward(); optimizer.step()
     assert loss.item() < first * .03
+
+
+def test_instantaneous_exact_tie_and_ema_history():
+    model=MoE(routed=7,bias_rate=.01)
+    model.pending_load.copy_(torch.tensor([3.,0.,0.,2.,4.,5.,7.]))
+    model.finish_step()
+    torch.testing.assert_close(model.selection_bias,torch.tensor([0.,.01,.01,.01,-.01,-.01,-.01]))
+    ema=MoE(routed=3,top_k=1,bias_rate=.01,ema_decay=.9)
+    ema.pending_load.copy_(torch.tensor([10.,0.,0.])); ema.finish_step()
+    ema.pending_load.copy_(torch.tensor([0.,0.,10.])); ema.finish_step()
+    torch.testing.assert_close(ema.ema_load,torch.tensor([.9,0.,.1]))
+    # Still downweights expert zero because the EMA retains history.
+    torch.testing.assert_close(ema.selection_bias,torch.tensor([-.02,.02,.02]))

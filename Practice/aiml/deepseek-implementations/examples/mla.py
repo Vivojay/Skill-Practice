@@ -35,7 +35,10 @@ def main():
         loss=(model(x)-target).square().mean()
         loss.backward(); optimizer.step()
         history.append(dict(loss=loss.item(),seconds=time.perf_counter()-tick))
-        if time.perf_counter()-clock>120: raise RuntimeError('Training wall budget exceeded')
+        if time.perf_counter()-clock>120:
+            save('artifacts/mla/checkpoint.pt',model,optimizer,config,step+1,generator,
+                 dict(x=x,target=target,first=first,history=history))
+            raise RuntimeError('Training wall budget exceeded; partial checkpoint saved')
     checkpoint='artifacts/mla/checkpoint.pt'
     save(checkpoint,model,optimizer,config,len(history),generator,dict(x=x,target=target,first=first,history=history))
     if len(history)<args.steps: print('Partial checkpoint:',checkpoint); return

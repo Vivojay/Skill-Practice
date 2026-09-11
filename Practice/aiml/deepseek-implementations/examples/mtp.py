@@ -38,7 +38,9 @@ def main():
         a,b=prediction_losses(*model(tokens,include_mtp=args.variant=='mtp'),tokens,lengths)
         (a+.3*b).backward(); optimizer.step()
         rows.append(dict(ntp_loss=a.item(),mtp_loss=b.item(),seconds=time.perf_counter()-tick))
-        if time.perf_counter()-clock>120: raise RuntimeError('Training wall budget exceeded')
+        if time.perf_counter()-clock>120:
+            save(f'artifacts/mtp-{args.variant}/checkpoint.pt',model,optimizer,config,step+1,generator,dict(rows=rows))
+            raise RuntimeError('Training wall budget exceeded; partial checkpoint saved')
     checkpoint=f'artifacts/mtp-{args.variant}/checkpoint.pt'
     save(checkpoint,model,optimizer,config,len(rows),generator,dict(rows=rows))
     if len(rows)<args.steps: print('Partial checkpoint:',checkpoint); return

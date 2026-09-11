@@ -7,3 +7,6 @@ artifacts/
 .research/
 *.pt
 *.pth
+!results/
+!results/*.json
+!results/*.csv

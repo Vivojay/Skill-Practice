@@ -22,7 +22,7 @@ def metadata(config):
     return dict(config=config, seed=config.get('seed'), python=platform.python_version(),
                 torch=str(torch.__version__), device='cpu', dtype='float32',
                 platform=platform.platform(), threads=torch.get_num_threads(),
-                command='python '+' '.join(sys.argv),
+                command=subprocess.list2cmdline(sys.orig_argv),
                 source_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
                 created_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()))
 

@@ -86,11 +86,13 @@ class MoE(nn.Module):
         if not self.training or not self.bias_rate or not self.pending_load.sum():
             return
         load = self.pending_load / self.pending_load.sum()
-        if self.updates == 0:
+        if self.updates == 0 or self.ema_decay == 0:
             self.ema_load.copy_(load)
         else:
             self.ema_load.lerp_(load, 1 - self.ema_decay)
-        self.selection_bias.add_(self.bias_rate * (self.ema_load.mean() - self.ema_load).sign())
+        # Raw integer counts preserve exact ties in the original sign controller.
+        feedback = self.pending_load if self.ema_decay == 0 else self.ema_load
+        self.selection_bias.add_(self.bias_rate * (feedback.mean() - feedback).sign())
         self.pending_load.zero_()
         self.updates.add_(1)
 

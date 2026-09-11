@@ -75,3 +75,20 @@ def test_frozen_snapshots_on_policy_and_response_logp():
     for frozen in (old,reference):
         assert all(p.grad is None and not p.requires_grad for p in frozen.parameters())
         for k,v in frozen.state_dict().items(): torch.testing.assert_close(v,snapshot[k])
+
+
+def test_arithmetic_sft_tiny_batch_overfit():
+    torch.manual_seed(17)
+    policy=TinyLM(vocab=24,width=16,heads=2)
+    prompts=torch.tensor([[20,1,21,2,22],[20,2,21,4,22],[20,4,21,3,22],[20,5,21,1,22]])
+    target=torch.tensor([[3,19],[6,19],[7,19],[6,19]])
+    optimizer=torch.optim.Adam(policy.parameters(),lr=.02)
+    for _ in range(65):
+        optimizer.zero_grad()
+        loss=-completion_logp(policy,prompts,target).mean()
+        loss.backward(); optimizer.step()
+    assert loss.item()<.02
+    policy.eval()
+    responses,mask,_=sample_completions(policy,prompts,1,3,19,23,torch.Generator().manual_seed(7),greedy=True)
+    assert torch.equal(responses[:,0,:2],target)
+    assert mask.sum(-1).eq(2).all()
