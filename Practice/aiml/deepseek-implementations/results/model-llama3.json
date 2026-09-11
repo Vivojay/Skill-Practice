@@ -1,0 +1,76 @@
+{
+  "config": {
+    "family": "llama3",
+    "steps": 60,
+    "seed": 17,
+    "width": 32,
+    "layers": 2,
+    "batch": 8,
+    "length": 12,
+    "vocab": 16,
+    "lr": 0.003,
+    "warmup": 0,
+    "mtp_weight": 0.3,
+    "balance_weight": 0.001,
+    "index_weight": 0.1,
+    "wall_budget_seconds": 180
+  },
+  "seed": 17,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "C:\\Users\\Vivan.Jaiswal\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m examples.models --family llama3",
+  "source_commit": "b9980284968d30000188a1231aa4c847f21d2a67",
+  "created_utc": "2026-09-11T08:47:03Z",
+  "initial": {
+    "loss": 2.8320682048797607,
+    "predictable_accuracy": 0.21666666865348816
+  },
+  "final": {
+    "loss": 0.5032901763916016,
+    "predictable_accuracy": 0.9083333611488342
+  },
+  "parameters": 25760,
+  "memory": {
+    "parameter_bytes": 103040,
+    "buffer_bytes": 0,
+    "optimizer_tensor_bytes": 206164,
+    "process_working_set_bytes": 428412928,
+    "process_peak_working_set_bytes": 429998080
+  },
+  "step_time": {
+    "median_ms": 14.214050010195933,
+    "iqr_ms": 2.484299970092252,
+    "samples": 60
+  },
+  "cache_bytes_at_12_tokens": 3072,
+  "prompt": [
+    [
+      12,
+      13,
+      14,
+      15
+    ]
+  ],
+  "generated": [
+    [
+      12,
+      13,
+      14,
+      15,
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  ],
+  "checkpoint": "artifacts/models-llama3-17/checkpoint.pt",
+  "task": "mod-16 progressions, stride 1..3; training starts 0..11, validation starts 12..15",
+  "limitation": "Same arithmetic rule and overlapping subsequences; not a general reasoning benchmark",
+  "first_training_loss": 2.6480729579925537,
+  "last_training_loss": 0.2292066067457199
+}

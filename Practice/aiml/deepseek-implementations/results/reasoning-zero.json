@@ -1,0 +1,71 @@
+{
+  "config": {
+    "recipe": "zero",
+    "seed": 17,
+    "base_steps": 30,
+    "cold_steps": 120,
+    "rl_steps": 20,
+    "reset_sft_steps": 60,
+    "student_steps": 100,
+    "student_base_steps": 20,
+    "group": 8,
+    "max_response": 3,
+    "updates_per_group": 2,
+    "wall_budget_seconds": 240,
+    "objective": "DeepSeekMath v1 token-level outcome GRPO; R1 stage-order analogue"
+  },
+  "seed": 17,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "C:\\Users\\Vivan.Jaiswal\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m examples.reasoning --recipe zero",
+  "source_commit": "d8eb5dd1cc5da318bcf7bf939d56065710d2d3dd",
+  "created_utc": "2026-09-11T08:58:13Z",
+  "stages": [
+    {
+      "stage": "base_pretrain",
+      "heldout": {
+        "sampled_exact_correctness": 0.0,
+        "greedy_exact_correctness": 0.0,
+        "mean_length": 2.9468750953674316,
+        "reward_dispersion": 0.0,
+        "kl_k3": 0.0,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "train_greedy": 0.0,
+      "seconds": 1.3158173999981955
+    },
+    {
+      "stage": "reasoning_rl",
+      "mean_reward": 0.0,
+      "last_kl": 0.011091865599155426,
+      "generated_completions": 2560,
+      "heldout": {
+        "sampled_exact_correctness": 0.0,
+        "greedy_exact_correctness": 0.0,
+        "mean_length": 2.9468750953674316,
+        "reward_dispersion": 0.0,
+        "kl_k3": 0.01382292527705431,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "train_greedy": 0.0,
+      "seconds": 4.848349300009431
+    }
+  ],
+  "checkpoint": "artifacts/reasoning-zero-17/checkpoint.pt",
+  "students": {},
+  "task": "Addition answer token + EOS; separate echo task; no reasoning traces",
+  "split": "80 training and 20 held-out operand pairs; only training prompts enter rejection data",
+  "limitations": [
+    "Generated sequence pretraining replaces a pretrained text base",
+    "Scripted answer-only cold start replaces curated reasoning traces",
+    "Mixed RL uses correctness rewards, not human preference reward models",
+    "Students learn verified local teacher answers; no released teacher weights",
+    "No disclosed R1-0528-specific training algorithm is reconstructed"
+  ]
+}

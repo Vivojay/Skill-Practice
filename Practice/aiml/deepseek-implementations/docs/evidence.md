@@ -1,5 +1,8 @@
 # Executed core evidence — 2026-09-11
 
+This page preserves the original mechanism experiments. The later decoder and
+training-stage runs are in [model-evidence.md](model-evidence.md).
+
 All 12 planned bounded training runs completed on Windows CPU, Python 3.12.10,
 torch 2.7.1+cu118, float32, one PyTorch thread. CUDA was not used. Experiment
 implementation commit: `55af5caaf1a267aa831e72ca295c30fd5c8cad88`.

@@ -1,0 +1,76 @@
+{
+  "config": {
+    "family": "v1",
+    "steps": 60,
+    "seed": 17,
+    "width": 32,
+    "layers": 2,
+    "batch": 8,
+    "length": 12,
+    "vocab": 16,
+    "lr": 0.003,
+    "warmup": 0,
+    "mtp_weight": 0.3,
+    "balance_weight": 0.001,
+    "index_weight": 0.1,
+    "wall_budget_seconds": 180
+  },
+  "seed": 17,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "C:\\Users\\Vivan.Jaiswal\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m examples.models --family v1",
+  "source_commit": "b9980284968d30000188a1231aa4c847f21d2a67",
+  "created_utc": "2026-09-11T08:45:02Z",
+  "initial": {
+    "loss": 2.977034330368042,
+    "predictable_accuracy": 0.02500000037252903
+  },
+  "final": {
+    "loss": 0.520828902721405,
+    "predictable_accuracy": 0.9166666865348816
+  },
+  "parameters": 27808,
+  "memory": {
+    "parameter_bytes": 111232,
+    "buffer_bytes": 0,
+    "optimizer_tensor_bytes": 222548,
+    "process_working_set_bytes": 430047232,
+    "process_peak_working_set_bytes": 430952448
+  },
+  "step_time": {
+    "median_ms": 11.300300000584684,
+    "iqr_ms": 1.1797999904956669,
+    "samples": 60
+  },
+  "cache_bytes_at_12_tokens": 6144,
+  "prompt": [
+    [
+      12,
+      13,
+      14,
+      15
+    ]
+  ],
+  "generated": [
+    [
+      12,
+      13,
+      14,
+      15,
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  ],
+  "checkpoint": "artifacts/models-v1-17/checkpoint.pt",
+  "task": "mod-16 progressions, stride 1..3; training starts 0..11, validation starts 12..15",
+  "limitation": "Same arithmetic rule and overlapping subsequences; not a general reasoning benchmark",
+  "first_training_loss": 2.8243722915649414,
+  "last_training_loss": 0.23168449103832245
+}

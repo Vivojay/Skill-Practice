@@ -308,5 +308,15 @@
     "history": "Submission history From: Xin Cheng [ view email ] [v1] Mon, 6 Jul 2026 14:28:06 UTC (376 KB)",
     "evidence": "Official DeepSpec README cites this exact identifier",
     "evidence_url": "https://github.com/deepseek-ai/DeepSpec"
+  },
+  {
+    "id": "DUALPATH",
+    "arxiv": "2602.21548",
+    "title": "DualPath: Breaking the Storage Bandwidth Bottleneck in Agentic LLM Inference",
+    "latest_version": "v2",
+    "latest_date": "Thu, 26 Feb 2026 02:04:07",
+    "history": "v1 2026-02-25 04:10:58 UTC; v2 2026-02-26 02:04:07 UTC",
+    "evidence": "Official DeepSeek research index links this report",
+    "evidence_url": "https://deepseek.com/en/news/"
   }
 ]

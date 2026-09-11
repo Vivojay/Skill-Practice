@@ -1,7 +1,9 @@
 # Discovery audit — 2026-09-11
 
 The seed is accounted for, but corpus exhaustiveness is not certified. The audit
-confirms 31 arXiv identities and two distinct officially linked report files.
+initially confirmed 31 arXiv identities and two distinct officially linked report
+files. The model-extension pass added DualPath, bringing the catalogue to 32 arXiv
+identities and 34 reports overall.
 It adds official systems/tooling entries, not an invented additional paper count.
 Non-core paper rows summarize disclosed contributions; they do not certify a
 full-method reading or completed implementation of those papers.
@@ -77,8 +79,11 @@ Original Hyper-Connections and Muon origins/scaling work remain external.
   **published but inaccessible**, not unpublished. Canonical PDF title and methods
   remain unread; no implementation is inferred from the launch's architecture name.
 - V3.2-Exp's repository contains `DeepSeek_V3_2.pdf`; direct full-PDF fetching
-  failed in this audit. The full report and corrected indexer positional code
-  remain prerequisites for implementation. NSA is a distinct attention method.
+  failed in the original audit. The extension subsequently read the V3.2 full
+  methods (section 2 explicitly says the architecture is identical to Exp) and
+  the current Exp inference code, including its split-half indexer rotation.
+  That supports the shared DSA implementation; Exp-only report details remain
+  unverified. NSA is a separate method.
 - The retrieved V4 arXiv page for `2606.19348` reports v1 submission on 2026-04-26,
   inconsistent with the identifier's month. Its official release is dated Apr 24.
   The catalogue preserves observed metadata and flags the inconsistency; no date
@@ -87,3 +92,32 @@ Original Hyper-Connections and Muon origins/scaling work remain external.
   collaborations and every employee's affiliation-at-publication history remain
   uncertain. Further discovery may add rows. API failures are not evidence of
   absence, and no inaccessible source is replaced with fabricated architecture.
+
+## Model-extension source pass, 2026-09-11
+
+Full architecture/stage methods were read in original-family section 2.2, V3.2
+section 2, V4 section 2 and R1 v1 section 2. The public V4 inference file is readable
+through its file page (`2b2bebc`), even though raw downloads returned 403. The V4
+reference specifies compression at a completed block, block-start rotary positions,
+the local-window union, zero-valued sink, and inverse output rotation.
+
+V4.1's inference file is visible through its file page, including separate vision,
+Engram and draft paths. Its PDF resolve request still returned a forbidden download
+or an unusable redirect. This extension therefore does not claim V4.1 support.
+
+Additional inspected configuration/reference evidence:
+
+- V2 `config.json` at `44f7caf`: unnormalized top-k softmax, route scale 16,
+  group maximum selection, two shared experts and .707 YaRN scale coefficients.
+  Local small settings are explicitly distinguished in the model notes.
+- R1 original six dense students and R1-0528-Qwen3-8B: external backbone families,
+  confirmed against official cards/configurations and versioned upstream code.
+- V4 research-index date is June 24, 2026, while its preview release is April 24;
+  the retrieved arXiv HTML still contains the earlier inconsistent header date.
+
+The refreshed official research index also exposed **DualPath (2602.21548)**,
+which the earlier catalogue missed. Its abstract/version page and the official
+index were inspected. It is now a catalogue-only systems row: 34 distinct reports,
+32 arXiv identifiers plus two repository-linked reports. Its systems methods were
+not implemented or benchmarked. This correction is further evidence that the
+catalogue is a bounded discovery record, not a certified exhaustive bibliography.

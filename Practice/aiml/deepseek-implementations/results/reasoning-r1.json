@@ -1,0 +1,184 @@
+{
+  "config": {
+    "recipe": "r1",
+    "seed": 17,
+    "base_steps": 30,
+    "cold_steps": 120,
+    "rl_steps": 20,
+    "reset_sft_steps": 60,
+    "student_steps": 100,
+    "student_base_steps": 20,
+    "group": 8,
+    "max_response": 3,
+    "updates_per_group": 2,
+    "wall_budget_seconds": 240,
+    "objective": "DeepSeekMath v1 token-level outcome GRPO; R1 stage-order analogue"
+  },
+  "seed": 17,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "C:\\Users\\Vivan.Jaiswal\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m examples.reasoning --recipe r1",
+  "source_commit": "d8eb5dd1cc5da318bcf7bf939d56065710d2d3dd",
+  "created_utc": "2026-09-11T08:57:58Z",
+  "stages": [
+    {
+      "stage": "base_pretrain",
+      "heldout": {
+        "sampled_exact_correctness": 0.0,
+        "greedy_exact_correctness": 0.0,
+        "mean_length": 2.9468750953674316,
+        "reward_dispersion": 0.0,
+        "kl_k3": 0.0,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "train_greedy": 0.0,
+      "seconds": 1.6780247999995481
+    },
+    {
+      "stage": "cold_sft",
+      "last_loss": 0.3858049809932709,
+      "heldout": {
+        "sampled_exact_correctness": 0.28125,
+        "greedy_exact_correctness": 0.44999998807907104,
+        "mean_length": 1.9812500476837158,
+        "reward_dispersion": 0.314849853515625,
+        "kl_k3": 0.0,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "train_greedy": 0.7875000238418579,
+      "seconds": 3.7579379999951925
+    },
+    {
+      "stage": "reasoning_rl",
+      "mean_reward": 0.61171875,
+      "last_kl": 0.08547094464302063,
+      "generated_completions": 1280,
+      "heldout": {
+        "sampled_exact_correctness": 0.2874999940395355,
+        "greedy_exact_correctness": 0.30000001192092896,
+        "mean_length": 2.0093750953674316,
+        "reward_dispersion": 0.30621105432510376,
+        "kl_k3": 0.11399374157190323,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "train_greedy": 0.8125,
+      "seconds": 3.072214299987536
+    },
+    {
+      "stage": "rejection",
+      "candidates": 640,
+      "unique_verified_responses": 79,
+      "heldout": {
+        "sampled_exact_correctness": 0.2874999940395355,
+        "greedy_exact_correctness": 0.30000001192092896,
+        "mean_length": 2.0093750953674316,
+        "reward_dispersion": 0.30621105432510376,
+        "kl_k3": 0.0,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "train_greedy": 0.8125,
+      "seconds": 0.8142765999946278
+    },
+    {
+      "stage": "reset_mixed_sft",
+      "verified_reasoning_rows": 79,
+      "last_loss": 0.7874126434326172,
+      "heldout": {
+        "sampled_exact_correctness": 0.10000000149011612,
+        "greedy_exact_correctness": 0.10000000149011612,
+        "mean_length": 2.0374999046325684,
+        "reward_dispersion": 0.1929587423801422,
+        "kl_k3": 0.0,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "train_greedy": 0.22499999403953552,
+      "seconds": 2.3755544000014197
+    },
+    {
+      "stage": "mixed_rl",
+      "mean_reward": 0.42890625,
+      "last_kl": 0.02012617513537407,
+      "generated_completions": 1280,
+      "heldout": {
+        "sampled_exact_correctness": 0.10000000149011612,
+        "greedy_exact_correctness": 0.15000000596046448,
+        "mean_length": 2.0374999046325684,
+        "reward_dispersion": 0.1859789788722992,
+        "kl_k3": 0.08729149401187897,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "train_greedy": 0.3375000059604645,
+      "seconds": 3.1096510000061244
+    },
+    {
+      "stage": "student_qwen2",
+      "last_loss": 1.2151761054992676,
+      "heldout": {
+        "sampled_exact_correctness": 0.05312500149011612,
+        "greedy_exact_correctness": 0.05000000074505806,
+        "mean_length": 2.046875,
+        "reward_dispersion": 0.17361822724342346,
+        "kl_k3": 1.9800586700439453,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "verified_reasoning_rows": 79,
+      "seconds": 0.9307016999810003
+    },
+    {
+      "stage": "student_qwen3",
+      "last_loss": 1.1715924739837646,
+      "heldout": {
+        "sampled_exact_correctness": 0.06875000149011612,
+        "greedy_exact_correctness": 0.05000000074505806,
+        "mean_length": 2.046875,
+        "reward_dispersion": 0.18290814757347107,
+        "kl_k3": 1.8304221630096436,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "verified_reasoning_rows": 79,
+      "seconds": 0.9811441999918316
+    },
+    {
+      "stage": "student_llama3",
+      "last_loss": 1.1114308834075928,
+      "heldout": {
+        "sampled_exact_correctness": 0.06562499701976776,
+        "greedy_exact_correctness": 0.05000000074505806,
+        "mean_length": 2.081249952316284,
+        "reward_dispersion": 0.1784752905368805,
+        "kl_k3": 1.8444331884384155,
+        "questions": 20,
+        "samples_per_question": 16
+      },
+      "verified_reasoning_rows": 79,
+      "seconds": 0.9552762000239454
+    }
+  ],
+  "checkpoint": "artifacts/reasoning-r1-17/checkpoint.pt",
+  "students": {
+    "qwen2": "artifacts/reasoning-r1-17/qwen2.pt",
+    "qwen3": "artifacts/reasoning-r1-17/qwen3.pt",
+    "llama3": "artifacts/reasoning-r1-17/llama3.pt"
+  },
+  "task": "Addition answer token + EOS; separate echo task; no reasoning traces",
+  "split": "80 training and 20 held-out operand pairs; only training prompts enter rejection data",
+  "limitations": [
+    "Generated sequence pretraining replaces a pretrained text base",
+    "Scripted answer-only cold start replaces curated reasoning traces",
+    "Mixed RL uses correctness rewards, not human preference reward models",
+    "Students learn verified local teacher answers; no released teacher weights",
+    "No disclosed R1-0528-specific training algorithm is reconstructed"
+  ]
+}
