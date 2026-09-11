@@ -10,6 +10,6 @@ Implementations and experiments in computer science.
 | [Practice/cryptography](Practice/cryptography/) | Python cipher implementations. |
 | [Practice/projects/chess](Practice/projects/chess/) | Chess scaffold, speech transcription and text-to-move experiments. |
 | [Practice/projects/recaman](Practice/projects/recaman/) | Recamán sequence implementation. |
-| [Practice/aiml/deepseek-implementations](Practice/aiml/deepseek-implementations/) | DeepSeek research and implementation files. |
+| [Practice/aiml/deepseek-implementations](Practice/aiml/deepseek-implementations/README.md) | DeepSeek research and implementation files. |
 
 Runtime requirements and validation vary by directory.
