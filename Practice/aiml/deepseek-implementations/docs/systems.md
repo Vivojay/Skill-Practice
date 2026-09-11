@@ -17,7 +17,8 @@ protocol overhead. Actual remote traffic is multiplied by the remote-assignment
 fraction. If all experts are local as in our code, remote traffic is zero. If
 multiple selected experts share a destination and dispatch deduplicates tokens,
 this simple per-assignment estimate overcounts outbound bytes. Accounting must
-preserve every assignment and matching combine weight; tests count the 192 routes.
+preserve every assignment and matching combine weight. Routing tests check that
+conservation; the saved experiment logs contain 192 assignments per batch.
 
 With 8 experts of hidden size 16, the three expert linear maps contain
 8*3*32*16=12,288 weights; four active experts use 6,144 weights/token. Counting a

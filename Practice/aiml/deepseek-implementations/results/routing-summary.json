@@ -1,0 +1,28 @@
+{
+  "paired_seeds": [
+    11,
+    22,
+    33
+  ],
+  "means": {
+    "instant": {
+      "mse": 0.08090260873238246,
+      "imbalance": 0.34409722222222233,
+      "switching": 0.39598997493734334,
+      "step_ms": 5.965366668533534,
+      "controller_ms": 0.12729999919732413
+    },
+    "ema": {
+      "mse": 0.08171344300111134,
+      "imbalance": 0.3039930555555556,
+      "switching": 0.05764411027568922,
+      "step_ms": 5.862900007438536,
+      "controller_ms": 0.13013332500122488
+    }
+  },
+  "relative_mse_change": 0.010022350100119093,
+  "relative_imbalance_change": -0.11654894046417774,
+  "conclusion": "Inconclusive overall: balance/switching and quality criteria pass in the mean; seed 11 adaptation is right censored in both arms.",
+  "novelty": "Known smoothing ablation, no novelty claim",
+  "uncertainty": "Three paired seeds, fixed arm order; no significance or robust speedup claim"
+}

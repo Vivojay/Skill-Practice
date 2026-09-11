@@ -1,0 +1,75 @@
+{
+  "config": {
+    "variant": "coarse",
+    "seed": 11,
+    "steps": 120,
+    "batch": 64,
+    "width": 32,
+    "learning_rate": 0.003,
+    "shift": 60,
+    "wall_budget_seconds": 120
+  },
+  "seed": 11,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "python -m examples.moe --variant coarse",
+  "source_commit": "55af5caaf1a267aa831e72ca295c30fd5c8cad88",
+  "created_utc": "2026-09-11T06:39:25Z",
+  "parameters": {
+    "total": 12416,
+    "active": 6272,
+    "expert_total": 12288,
+    "expert_active": 6144
+  },
+  "memory": {
+    "parameter_bytes": 49664,
+    "buffer_bytes": 56,
+    "optimizer_tensor_bytes": 99380,
+    "process_working_set_bytes": 427929600,
+    "process_peak_working_set_bytes": 430211072
+  },
+  "initial_memory": {
+    "parameter_bytes": 49664,
+    "buffer_bytes": 56,
+    "optimizer_tensor_bytes": 0,
+    "process_working_set_bytes": 423374848,
+    "process_peak_working_set_bytes": 423374848,
+    "after_first_step": {
+      "parameter_bytes": 49664,
+      "buffer_bytes": 56,
+      "optimizer_tensor_bytes": 99380,
+      "process_working_set_bytes": 427143168,
+      "process_peak_working_set_bytes": 427143168
+    }
+  },
+  "task": "two-cluster continuous regression; held-out RNG seed+90000",
+  "heldout_mse": 0.0775579959154129,
+  "heldout_loads": [
+    405,
+    336,
+    162,
+    121
+  ],
+  "late_imbalance": 0.5609375,
+  "switch_rate": 0.0,
+  "adaptation_updates": null,
+  "step_time": {
+    "median_ms": 3.689599980134517,
+    "iqr_ms": 1.4196999836713076,
+    "samples": 115
+  },
+  "controller_time": {
+    "median_ms": 0.011099997209385037,
+    "iqr_ms": 0.0041000021155923605,
+    "samples": 115
+  },
+  "pre_shift_imbalance": 0.3953125,
+  "input_tokens": 7680,
+  "checkpoint": "artifacts/moe-coarse-11/checkpoint.pt",
+  "log_path": "artifacts/moe-coarse-11/log.json",
+  "metadata_note": "Module invocation reconstructed from executed command log; initial logger expanded -m to a script path. Metrics unchanged."
+}

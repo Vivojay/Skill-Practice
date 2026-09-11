@@ -1,0 +1,78 @@
+{
+  "config": {
+    "variant": "instant",
+    "seed": 11,
+    "steps": 120,
+    "batch": 64,
+    "width": 32,
+    "learning_rate": 0.003,
+    "shift": 60,
+    "wall_budget_seconds": 120
+  },
+  "seed": 11,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "python -m examples.moe --seed 11 --variant instant",
+  "source_commit": "55af5caaf1a267aa831e72ca295c30fd5c8cad88",
+  "created_utc": "2026-09-11T06:39:34Z",
+  "parameters": {
+    "total": 12512,
+    "active": 6368,
+    "expert_total": 12288,
+    "expert_active": 6144
+  },
+  "memory": {
+    "parameter_bytes": 50048,
+    "buffer_bytes": 92,
+    "optimizer_tensor_bytes": 100196,
+    "process_working_set_bytes": 427458560,
+    "process_peak_working_set_bytes": 430264320
+  },
+  "initial_memory": {
+    "parameter_bytes": 50048,
+    "buffer_bytes": 92,
+    "optimizer_tensor_bytes": 0,
+    "process_working_set_bytes": 423350272,
+    "process_peak_working_set_bytes": 423350272,
+    "after_first_step": {
+      "parameter_bytes": 50048,
+      "buffer_bytes": 92,
+      "optimizer_tensor_bytes": 100196,
+      "process_working_set_bytes": 427106304,
+      "process_peak_working_set_bytes": 427106304
+    }
+  },
+  "task": "two-cluster continuous regression; held-out RNG seed+90000",
+  "heldout_mse": 0.07859472185373306,
+  "heldout_loads": [
+    295,
+    209,
+    212,
+    177,
+    213,
+    197,
+    233
+  ],
+  "late_imbalance": 0.4765625000000001,
+  "switch_rate": 0.3383458646616541,
+  "adaptation_updates": null,
+  "step_time": {
+    "median_ms": 5.221899977186695,
+    "iqr_ms": 1.0298999841324985,
+    "samples": 115
+  },
+  "controller_time": {
+    "median_ms": 0.10839998139999807,
+    "iqr_ms": 0.027400004910305142,
+    "samples": 115
+  },
+  "pre_shift_imbalance": 0.20130208333333338,
+  "input_tokens": 7680,
+  "checkpoint": "artifacts/moe-instant-11/checkpoint.pt",
+  "log_path": "artifacts/moe-instant-11/log.json",
+  "metadata_note": "Module invocation reconstructed from executed command log; initial logger expanded -m to a script path. Metrics unchanged."
+}

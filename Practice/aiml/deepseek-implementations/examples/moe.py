@@ -77,6 +77,7 @@ def main():
         predicted,info=model(x)
         heldout=(predicted-y).square().mean().item()
     late=rows[-20:]
+    before_shift=rows[max(0,config['shift']-20):config['shift']]
     switches=[]
     for a,b in zip(late,late[1:]):
         switches.append(sum(x*y<0 for x,y in zip(a['bias_delta'],b['bias_delta']))/len(a['loads']))
@@ -87,7 +88,7 @@ def main():
                   switch_rate=sum(switches)/len(switches),adaptation_updates=adaptation(rows,config['shift']),
                   step_time=timing([r['seconds'] for r in rows[5:]]),
                   controller_time=timing([r['controller_seconds'] for r in rows[5:]]),
-                  pre_shift_imbalance=sum(r['imbalance'] for r in rows[config['shift']-20:config['shift']])/20,
+                  pre_shift_imbalance=sum(r['imbalance'] for r in before_shift)/len(before_shift),
                   input_tokens=len(rows)*64,checkpoint=checkpoint,
                   log_path=f'artifacts/moe-{args.variant}-{args.seed}/log.json')
     write_json(result['log_path'],rows)

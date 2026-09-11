@@ -1,0 +1,87 @@
+{
+  "config": {
+    "seed": 11,
+    "sft_steps": 160,
+    "rl_steps": 60,
+    "width": 32,
+    "sft_batch": 32,
+    "rl_questions": 8,
+    "group": 8,
+    "response_cap": 3,
+    "mu": 2,
+    "beta": 0.04,
+    "clip": 0.2,
+    "sft_lr": 0.003,
+    "rl_lr": 0.0005,
+    "wall_budget_seconds": 180,
+    "paper": "2402.03300v1"
+  },
+  "seed": 11,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "python -m examples.grpo",
+  "source_commit": "55af5caaf1a267aa831e72ca295c30fd5c8cad88",
+  "created_utc": "2026-09-11T06:40:58Z",
+  "parameters": 12096,
+  "initial_memory": {
+    "parameter_bytes": 48384,
+    "buffer_bytes": 0,
+    "process_working_set_bytes": 424140800,
+    "process_peak_working_set_bytes": 424140800
+  },
+  "memory": {
+    "parameter_bytes": 48384,
+    "buffer_bytes": 0,
+    "optimizer_tensor_bytes": 96824,
+    "process_working_set_bytes": 432259072,
+    "process_peak_working_set_bytes": 434032640
+  },
+  "task": "integer addition; answer is one sum token followed by EOS, no reasoning text",
+  "split": "80 train / 20 held-out operand pairs, held-out iff (a+3*b)%5==0",
+  "sft_train": {
+    "sampled_exact_correctness": 0.515625,
+    "greedy_exact_correctness": 0.862500011920929,
+    "mean_length": 1.998437523841858,
+    "reward_dispersion": 0.44305887818336487,
+    "kl_k3": 0.0,
+    "questions": 80,
+    "samples_per_question": 16
+  },
+  "sft_heldout": {
+    "sampled_exact_correctness": 0.08749999850988388,
+    "greedy_exact_correctness": 0.05000000074505806,
+    "mean_length": 2.0,
+    "reward_dispersion": 0.2027934491634369,
+    "kl_k3": 0.0,
+    "questions": 20,
+    "samples_per_question": 16
+  },
+  "grpo_heldout": {
+    "sampled_exact_correctness": 0.04374999925494194,
+    "greedy_exact_correctness": 0.0,
+    "mean_length": 2.0,
+    "reward_dispersion": 0.11200056970119476,
+    "kl_k3": 0.10398215055465698,
+    "questions": 20,
+    "samples_per_question": 16
+  },
+  "sft_timing": {
+    "median_ms": 4.981949998182245,
+    "iqr_ms": 1.8860000127460808,
+    "samples": 160
+  },
+  "rl_timing": {
+    "median_ms": 27.16475000488572,
+    "iqr_ms": 3.1869999947957695,
+    "samples": 60
+  },
+  "checkpoint": "artifacts/grpo/checkpoint.pt",
+  "log_path": "artifacts/grpo/log.json",
+  "generated_rl_completions": 3840,
+  "rl_optimizer_steps": 120,
+  "metadata_note": "Module invocation reconstructed from executed command log; initial logger expanded -m to a script path. Metrics unchanged."
+}

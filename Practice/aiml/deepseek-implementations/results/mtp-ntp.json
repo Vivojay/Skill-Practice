@@ -1,0 +1,52 @@
+{
+  "config": {
+    "variant": "ntp",
+    "seed": 11,
+    "steps": 120,
+    "batch": 16,
+    "width": 32,
+    "length": 16,
+    "lr": 0.003,
+    "mtp_weight": 0.3,
+    "wall_budget_seconds": 120
+  },
+  "seed": 11,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "python -m examples.mtp --variant ntp",
+  "source_commit": "55af5caaf1a267aa831e72ca295c30fd5c8cad88",
+  "created_utc": "2026-09-11T06:40:37Z",
+  "parameters_total": 22176,
+  "base_parameters": 11584,
+  "parameters_used": 11584,
+  "initial_memory": {
+    "parameter_bytes": 88704,
+    "buffer_bytes": 0,
+    "process_working_set_bytes": 423174144,
+    "process_peak_working_set_bytes": 423174144
+  },
+  "memory": {
+    "parameter_bytes": 88704,
+    "buffer_bytes": 0,
+    "optimizer_tensor_bytes": 92728,
+    "process_working_set_bytes": 430432256,
+    "process_peak_working_set_bytes": 432517120
+  },
+  "eval_ntp_loss": 0.34153568744659424,
+  "eval_predictable_accuracy": 0.9776785969734192,
+  "task": "mod-16 progressions, stride 1..4; all 64 combinations evaluated",
+  "step_time": {
+    "median_ms": 5.9714000090025365,
+    "iqr_ms": 2.4505000037606806,
+    "samples": 115
+  },
+  "base_token_positions": 30720,
+  "extra_block_positions": 0,
+  "checkpoint": "artifacts/mtp-ntp/checkpoint.pt",
+  "log_path": "artifacts/mtp-ntp/log.json",
+  "metadata_note": "Module invocation reconstructed from executed command log; initial logger expanded -m to a script path. Metrics unchanged."
+}

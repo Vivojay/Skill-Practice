@@ -1,0 +1,78 @@
+{
+  "config": {
+    "variant": "ema",
+    "seed": 11,
+    "steps": 120,
+    "batch": 64,
+    "width": 32,
+    "learning_rate": 0.003,
+    "shift": 60,
+    "wall_budget_seconds": 120
+  },
+  "seed": 11,
+  "python": "3.12.10",
+  "torch": "2.7.1+cu118",
+  "device": "cpu",
+  "dtype": "float32",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "threads": 1,
+  "command": "python -m examples.moe --seed 11 --variant ema",
+  "source_commit": "55af5caaf1a267aa831e72ca295c30fd5c8cad88",
+  "created_utc": "2026-09-11T06:39:43Z",
+  "parameters": {
+    "total": 12512,
+    "active": 6368,
+    "expert_total": 12288,
+    "expert_active": 6144
+  },
+  "memory": {
+    "parameter_bytes": 50048,
+    "buffer_bytes": 92,
+    "optimizer_tensor_bytes": 100196,
+    "process_working_set_bytes": 427405312,
+    "process_peak_working_set_bytes": 429420544
+  },
+  "initial_memory": {
+    "parameter_bytes": 50048,
+    "buffer_bytes": 92,
+    "optimizer_tensor_bytes": 0,
+    "process_working_set_bytes": 424497152,
+    "process_peak_working_set_bytes": 424497152,
+    "after_first_step": {
+      "parameter_bytes": 50048,
+      "buffer_bytes": 92,
+      "optimizer_tensor_bytes": 100196,
+      "process_working_set_bytes": 428216320,
+      "process_peak_working_set_bytes": 428216320
+    }
+  },
+  "task": "two-cluster continuous regression; held-out RNG seed+90000",
+  "heldout_mse": 0.07897903770208359,
+  "heldout_loads": [
+    284,
+    214,
+    220,
+    181,
+    199,
+    203,
+    235
+  ],
+  "late_imbalance": 0.4875000000000001,
+  "switch_rate": 0.03759398496240601,
+  "adaptation_updates": null,
+  "step_time": {
+    "median_ms": 5.813000025227666,
+    "iqr_ms": 1.2913000246044248,
+    "samples": 115
+  },
+  "controller_time": {
+    "median_ms": 0.1323999895248562,
+    "iqr_ms": 0.046500033931806684,
+    "samples": 115
+  },
+  "pre_shift_imbalance": 0.22682291666666674,
+  "input_tokens": 7680,
+  "checkpoint": "artifacts/moe-ema-11/checkpoint.pt",
+  "log_path": "artifacts/moe-ema-11/log.json",
+  "metadata_note": "Module invocation reconstructed from executed command log; initial logger expanded -m to a script path. Metrics unchanged."
+}
