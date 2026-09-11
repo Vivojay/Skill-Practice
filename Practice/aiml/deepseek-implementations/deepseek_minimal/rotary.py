@@ -8,7 +8,8 @@ import torch
 
 
 def inverse_frequencies(dim, *, base=10000., factor=1., original_length=4096,
-                        beta_fast=32., beta_slow=1., device=None, dtype=None):
+                        beta_fast=32., beta_slow=1., scheme='yarn',
+                        low_frequency=1., high_frequency=4., device=None, dtype=None):
     if dim < 2 or dim % 2 or base <= 1 or factor < 1 or original_length < 1:
         raise ValueError('Need even rotary width, base > 1, factor >= 1 and positive context')
     if not 0 < beta_slow < beta_fast:
@@ -17,6 +18,14 @@ def inverse_frequencies(dim, *, base=10000., factor=1., original_length=4096,
     frequencies = base ** (-2 * index / dim)
     if factor == 1:
         return frequencies
+    if scheme == 'llama3':
+        if not 0 < low_frequency < high_frequency:
+            raise ValueError('Need increasing positive wavelength thresholds')
+        rotations = original_length*frequencies/(2*math.pi)
+        blend = ((rotations-low_frequency)/(high_frequency-low_frequency)).clamp(0,1)
+        return frequencies*(blend+(1-blend)/factor)
+    if scheme != 'yarn':
+        raise ValueError('Unknown rotary scaling scheme')
     def boundary(rotations):
         return dim * math.log(original_length / (2 * math.pi * rotations)) / (2 * math.log(base))
     low = max(0, math.floor(boundary(beta_fast)))

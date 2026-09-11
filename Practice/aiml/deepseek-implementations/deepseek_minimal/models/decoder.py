@@ -24,7 +24,7 @@ class KVCache:
 
 class GroupedAttention(nn.Module):
     def __init__(self, width=32, heads=4, kv_heads=2, rotary=None,
-                 qkv_bias=False, qk_norm=False):
+                 qkv_bias=False, qk_norm=False, norm_eps=1e-6):
         super().__init__()
         if min(width, heads, kv_heads) < 1 or width % heads or heads % kv_heads or (width // heads) % 2:
             raise ValueError('Need even head width and divisible query/KV heads')
@@ -34,8 +34,8 @@ class GroupedAttention(nn.Module):
         self.k = nn.Linear(width, kv_heads*self.dim, bias=qkv_bias)
         self.v = nn.Linear(width, kv_heads*self.dim, bias=qkv_bias)
         self.out = nn.Linear(width, width, bias=False)
-        self.q_norm = nn.RMSNorm(self.dim, eps=1e-6) if qk_norm else nn.Identity()
-        self.k_norm = nn.RMSNorm(self.dim, eps=1e-6) if qk_norm else nn.Identity()
+        self.q_norm = nn.RMSNorm(self.dim, eps=norm_eps) if qk_norm else nn.Identity()
+        self.k_norm = nn.RMSNorm(self.dim, eps=norm_eps) if qk_norm else nn.Identity()
 
     def _attention(self, x, cache=None, start=0):
         b, t, _ = x.shape
@@ -73,11 +73,11 @@ class GroupedAttention(nn.Module):
 
 
 class Block(nn.Module):
-    def __init__(self, width, attention, ffn):
+    def __init__(self, width, attention, ffn, norm_eps=1e-6):
         super().__init__()
         self.attention, self.ffn = attention, ffn
-        self.attention_norm = nn.RMSNorm(width, eps=1e-6)
-        self.ffn_norm = nn.RMSNorm(width, eps=1e-6)
+        self.attention_norm = nn.RMSNorm(width, eps=norm_eps)
+        self.ffn_norm = nn.RMSNorm(width, eps=norm_eps)
         self.routing = None
 
     def __getstate__(self):
@@ -103,11 +103,11 @@ class Block(nn.Module):
 
 
 class Decoder(nn.Module):
-    def __init__(self, vocab, width, blocks):
+    def __init__(self, vocab, width, blocks, norm_eps=1e-6):
         super().__init__()
         self.embedding = nn.Embedding(vocab, width)
         self.blocks = nn.ModuleList(blocks)
-        self.norm = nn.RMSNorm(width, eps=1e-6)
+        self.norm = nn.RMSNorm(width, eps=norm_eps)
         self.head = nn.Linear(width, vocab, bias=False)
 
     def hidden(self, tokens, offset=0):
