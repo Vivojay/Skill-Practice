@@ -35,12 +35,19 @@ def balance_losses(scores, indices, device_groups=1):
 
 class MoE(nn.Module):
     def __init__(self, width=32, hidden=16, routed=7, shared=1, top_k=3,
-                 score='softmax', normalize=False, bias_rate=0., ema_decay=0.):
+                 score='softmax', normalize=False, bias_rate=0., ema_decay=0.,
+                 groups=1, top_groups=1, group_score='max', route_scale=1.):
         super().__init__()
         if not 1 <= top_k <= routed or shared < 0:
             raise ValueError('Invalid expert counts')
-        if score not in ('softmax', 'sigmoid') or not 0 <= ema_decay < 1 or bias_rate < 0:
+        if score not in ('softmax', 'sigmoid', 'sqrtsoftplus') or not 0 <= ema_decay < 1 or bias_rate < 0:
             raise ValueError('Invalid router/controller configuration')
+        if groups < 1 or routed % groups or not 1 <= top_groups <= groups:
+            raise ValueError('Need equal expert groups and valid group selection')
+        if top_k > top_groups * (routed // groups) or group_score not in ('max', 'sum2') or route_scale <= 0:
+            raise ValueError('Selected groups must contain enough experts')
+        self.groups, self.top_groups, self.group_score = groups, top_groups, group_score
+        self.route_scale = route_scale
         self.router = nn.Linear(width, routed, bias=False)
         self.experts = nn.ModuleList(Expert(width, hidden) for _ in range(routed))
         self.shared = nn.ModuleList(Expert(width, hidden) for _ in range(shared))
@@ -53,12 +60,25 @@ class MoE(nn.Module):
 
     def route(self, x):
         logits = self.router(x)
-        scores = logits.softmax(-1) if self.score == 'softmax' else logits.sigmoid()
-        indices = (scores + self.selection_bias).topk(self.top_k, dim=-1).indices
+        if self.score == 'softmax':
+            scores = logits.softmax(-1)
+        elif self.score == 'sigmoid':
+            scores = logits.sigmoid()
+        else:
+            scores = F.softplus(logits).sqrt()
+        choice = scores + self.selection_bias
+        if self.groups > 1:
+            grouped = choice.unflatten(-1, (self.groups, -1))
+            count = 1 if self.group_score == 'max' else min(2, grouped.shape[-1])
+            group_scores = grouped.topk(count, dim=-1).values.sum(-1)
+            keep = torch.zeros_like(group_scores, dtype=torch.bool)
+            keep.scatter_(-1, group_scores.topk(self.top_groups, dim=-1).indices, True)
+            choice = grouped.masked_fill(~keep[..., None], -torch.inf).flatten(-2)
+        indices = choice.topk(self.top_k, dim=-1).indices
         weights = scores.gather(-1, indices)
         if self.normalize:
             weights = weights / weights.sum(-1, keepdim=True).clamp_min(torch.finfo(weights.dtype).tiny)
-        return scores, indices, weights
+        return scores, indices, weights * self.route_scale
 
     def forward(self, x):
         flat = x.reshape(-1, x.shape[-1])

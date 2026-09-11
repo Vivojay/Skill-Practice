@@ -7,16 +7,12 @@ from dataclasses import dataclass
 import math
 import torch
 from torch import nn
+from .rotary import rotate, attention_scale
 
 
 def rope(x, positions):
     """x [B,T,H,R], positions [T]; R must be even."""
-    r = x.shape[-1]
-    frequencies = 10000. ** (-torch.arange(0, r, 2, device=x.device, dtype=x.dtype) / r)
-    angle = positions.to(x.dtype)[:, None] * frequencies
-    c, s = angle.cos()[None, :, None], angle.sin()[None, :, None]
-    even, odd = x[..., 0::2], x[..., 1::2]
-    return torch.stack((even*c - odd*s, even*s + odd*c), -1).flatten(-2)
+    return rotate(x, positions)
 
 
 @dataclass
@@ -40,11 +36,13 @@ class Cache:
 
 class MLA(nn.Module):
     def __init__(self, width=32, heads=4, content=8, positional=4, value=8,
-                 kv_rank=8, q_rank=16):
+                 kv_rank=8, q_rank=16, rotary=None):
         super().__init__()
         if min(width, heads, content, positional, value, kv_rank, q_rank) < 1 or positional % 2:
             raise ValueError('Positive dimensions and even RoPE dimension required')
         self.heads, self.content, self.positional, self.value = heads, content, positional, value
+        self.rotary = dict(rotary or {})
+        self.scale = attention_scale(self.rotary.get('factor', 1)) / math.sqrt(content + positional)
         self.q_down = nn.Linear(width, q_rank, bias=False)
         self.q_norm = nn.RMSNorm(q_rank, eps=1e-6)
         self.q_content = nn.Linear(q_rank, heads*content, bias=False)
@@ -61,12 +59,12 @@ class MLA(nn.Module):
         positions = torch.arange(start, start+t, device=x.device)
         cq = self.q_norm(self.q_down(x))
         qc = self.q_content(cq).view(b,t,self.heads,self.content)
-        qr = rope(self.q_rope(cq).view(b,t,self.heads,self.positional), positions)
+        qr = rotate(self.q_rope(cq).view(b,t,self.heads,self.positional), positions, **self.rotary)
         c = self.kv_norm(self.kv_down(x))
-        kr = rope(self.k_rope(x).unsqueeze(2), positions).squeeze(2)
+        kr = rotate(self.k_rope(x).unsqueeze(2), positions, **self.rotary).squeeze(2)
         return qc, qr, c, kr
 
-    def _attention(self, x, cache, start, expanded):
+    def _attention(self, x, cache, start, expanded, selected=None):
         if x.ndim != 3 or not x.shape[1] or start < 0:
             raise ValueError('Need nonempty [B,T,D] and nonnegative position')
         if cache is not None:
@@ -95,7 +93,9 @@ class MLA(nn.Module):
             new_cache = Cache(c, kr, offset)
         query_pos = torch.arange(start,start+t,device=x.device)
         key_pos = torch.arange(offset,offset+new_cache.length,device=x.device)
-        scores = (scores / math.sqrt(self.content+self.positional)).masked_fill(key_pos[None,:] > query_pos[:,None], -torch.inf)
+        scores = (scores * self.scale).masked_fill(key_pos[None,:] > query_pos[:,None], -torch.inf)
+        if selected is not None:
+            scores = scores.masked_fill(~selected[:, None], -torch.inf)
         probabilities = scores.softmax(-1)
         if expanded:
             y = self.out(torch.einsum('bhts,bshv->bthv',probabilities,v).flatten(2))
