@@ -16,6 +16,30 @@ The inspected Math README exposes inference usage, not the original GRPO trainer
 GRPO is expressed from its fully disclosed v1 equations. V3's inspected inference
 file does not implement the training MTP objective; that comes from report v2.
 
+The model extension also checks V4 compression, rotary positions, output
+de-rotation, routing and residual-stream layout against
+[the public V4 reference](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/blob/2b2bebc/inference/model.py).
+Its MIT notice has the same 2023 DeepSeek copyright preserved below. Our version
+uses separate projection modules, a token loop and explicit cache values; it omits
+distributed/quantized kernels and uses locally chosen small configurations.
+V3.2 indexing was checked against the official Exp inference file, whose fetched
+SHA256 is `bfe5b89186b579910b6d59fa7e0cf1f7a75ceb4ec5d0f5b54f0ccbe77cdb6a63`.
+
+Dense student bias/normalization choices were checked against the Transformers
+Qwen2 reference at v4.44.0 and Qwen3 reference at v4.51.3. The wavelength-scaling
+expression in `rotary.py` is a compact reformulation of the piecewise Llama3 rule
+in Transformers v4.46.3. Relevant original notices are:
+
+- Copyright 2024 The HuggingFace Team. All rights reserved.
+- Copyright 2025 The Qwen team, Alibaba Group and the HuggingFace Inc. team.
+  All rights reserved.
+
+These references use Apache License 2.0; a copy is in
+[licenses/APACHE-2.0.txt](licenses/APACHE-2.0.txt). The local routines change naming,
+configuration and tensor layout and do not include the original framework classes.
+The model notes link the exact reference versions. Model-weight and tokenizer
+licenses are separate; this repository contains neither downloaded asset.
+
 RoPE originates with Su et al.; SwiGLU with Shazeer; PPO and the KL estimator with
 Schulman and collaborators. MTP draws on Gloeckle et al. and EAGLE, with DeepSeek's
 sequential construction distinguished in the lab. DPO, LoRA, speculative decoding,
